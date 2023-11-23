@@ -1,12 +1,10 @@
 <template>
-    Tela de Cadastro de Placas
-  </template>
+  Tela de Cadastro de Placas
+</template>
   
-  <script setup>
+<script setup>
+
+</script>
   
-  </script>
-  
-  <style>
-  
-  </style>
+<style></style>
   

@@ -32,6 +32,11 @@ const router = createRouter({
       path: '/cadastro/configuracao',
       name: 'Cadastro de Configuração',
       component: () => import('../views/register/ConfigView.vue')
+    },
+    {
+      path: '/relatorios',
+      name: 'Relatórios',
+      component: () => import('../views/ReportView.vue')
     }
   ]
 })

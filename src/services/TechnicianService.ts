@@ -1,8 +1,10 @@
 import http from '@/http-common';
 
 class TechnicianService {
-    getAll(): Promise<any> {
-        return http.get('/tecnico');
+    getAll(params): Promise<any> {
+        return http.get('/tecnico', {
+            params
+        });
     }
     create(data: any): Promise<any> {
         return http.post('/cadastro/tecnico', data)

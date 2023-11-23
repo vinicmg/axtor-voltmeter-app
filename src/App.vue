@@ -1,20 +1,19 @@
 <template>
-    <v-app>        
+    <v-app class="bg_image">
         <sideBar></sideBar>
-        <v-app-bar 
-            :color="colors.primary"
-            app
-        >
+        <v-app-bar :color="colors.primary" app>
             <v-app-bar-nav-icon @click="isOpen = !isOpen"></v-app-bar-nav-icon>
-            <v-app-bar-title
-                class="d-flex justify-center"
-            >Axtor Bancadas</v-app-bar-title>
+            <v-app-bar-title class="d-flex justify-center">Axtor Bancadas</v-app-bar-title>
         </v-app-bar>
-        
+
         <v-main>
             <RouterView />
         </v-main>
-    </v-app> 
+
+        <v-footer height="0.1vh" color="transparent" class="d-flex justify-center align-end">
+            <span class="footer" color="white">© 2023 Axtor Bancadas e Ferramentas</span>
+        </v-footer>
+    </v-app>
 </template>
 
 <script setup>
@@ -30,5 +29,12 @@ const { isOpen } = storeToRefs(sidebarStore)
 </script>
 
 <style>
+.bg_image {
+    background: url("assets/bg_main.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
 
+.footer {
+    color: white
+}
 </style>

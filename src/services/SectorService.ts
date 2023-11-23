@@ -1,8 +1,10 @@
 import http from '@/http-common';
 
 class SectorService {
-    getAll(): Promise<any> {
-        return http.get('/setor');
+    getAll(params): Promise<any> {  
+        return http.get('/setor', {
+            params
+        });
     }
     create(data: any): Promise<any> {
         return http.post('/cadastro/setor', data)

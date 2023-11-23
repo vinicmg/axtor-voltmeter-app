@@ -1,9 +1,9 @@
-<template>
-  <label color="white">Placas</label>
-</template>
-
 <script setup lang="ts">
 
 </script>
+
+<template>
+  Relatórios
+</template>
 
 <style lang="scss"></style>
