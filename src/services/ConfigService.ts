@@ -1,8 +1,10 @@
 import http from '@/http-common';
 
 class ConfigService {
-    getAll() : Promise<any> {
-        return http.get('/configuracao');
+    getAll(params) : Promise<any> {
+        return http.get('/configuracao', {
+            params
+        });
     }
     create(data: any): Promise<any> {
         return http.post('/cadastro/configuracao', data)

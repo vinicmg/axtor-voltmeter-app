@@ -1,5 +1,6 @@
 <template>
   <v-container class="my-5">
+    <CustomFilter @on-filter-search="onFilterSearch" @on-clear-filter="onClearFilter" />
     <v-data-table :headers="headers" :items="configs" height="50vh">
       <template v-slot:top>
         <v-toolbar flat>
@@ -287,6 +288,7 @@
 <script>
 import ConfigService from '@/services/ConfigService'
 import { defineComponent } from 'vue';
+import CustomFilter from '@/components/custom-filter.vue'
 
 export default defineComponent({
   data: () => ({
@@ -400,6 +402,9 @@ export default defineComponent({
       osc_10khz_max: 0,
     }
   }),
+  components: {
+    CustomFilter
+  },
   computed: {
     formTitle() {
       return this.editedIndex === -1 ? 'Nova Configuração' : 'Editar Configuração'
@@ -472,6 +477,16 @@ export default defineComponent({
       this.getConfigs()
       this.close()
     },
+    onFilterSearch(val) {
+      this.getQueryConfigs(val)
+    },
+    async getQueryConfigs(val) {
+      let response = await ConfigService.getAll(val)
+      this.configs = response.data
+    },
+    onClearFilter() {
+      this.getConfigs()
+    }
   }
 })
 </script>

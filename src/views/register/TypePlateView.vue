@@ -1,5 +1,6 @@
 <template>
   <v-container class="my-5">
+    <CustomFilter :current-view="'typeplate'" @on-filter-search="onFilterSearch" @on-clear-filter="onClearFilter" />
     <v-data-table :headers="headers" :items="typePlates" height="50vh">
       <template v-slot:top>
         <v-toolbar flat>
@@ -86,6 +87,7 @@
 <script>
 import TypePlateService from '@/services/TypePlateService'
 import { defineComponent } from 'vue';
+import CustomFilter from '@/components/custom-filter.vue'
 
 export default defineComponent({
   data: () => ({
@@ -129,6 +131,9 @@ export default defineComponent({
       modelo: '',
     }
   }),
+  components: {
+    CustomFilter
+  },
   computed: {
     formTitle() {
       return this.editedIndex === -1 ? 'Novo Tipo de Placa' : 'Editar Tipo de Placa'
@@ -201,7 +206,17 @@ export default defineComponent({
       this.getTypePlates()
       this.close()
     },
-  }
+    onFilterSearch(val) {
+      this.getQueryTypePlates(val);
+    },
+    async getQueryTypePlates(val) {
+      let response = await TypePlateService.getAll(val)
+      this.typePlates = response.data;
+    },
+    onClearFilter() {
+      this.getTypePlates()
+    }
+  },
 })
 </script>
 

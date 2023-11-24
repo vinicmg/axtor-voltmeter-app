@@ -224,7 +224,7 @@ export default defineComponent({
         },
         async getQueryTechnicians(val) {
             let response = await TechnicianService.getAll(val)
-            this.technicians = response.data
+            this.technicians = response.data;
         },
         onClearFilter() {
             this.getTechnicians();

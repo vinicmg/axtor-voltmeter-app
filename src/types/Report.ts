@@ -1,6 +1,6 @@
 export default interface Report {
     id: null,
-    num_serie: number,
+    num_serie: string,
     dt_inicial: Date,
     dt_final: Date,
     id_tp_placa: number,

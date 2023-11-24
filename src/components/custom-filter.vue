@@ -14,6 +14,15 @@
                 <v-text-field variant="outlined" label="Setor" v-model="sectorValue"></v-text-field>
             </v-col>
 
+            <v-col v-if="this.currentView === 'typeplate'">
+                <v-text-field variant="outlined" label="Modelo" v-model="modelValue"></v-text-field>
+            </v-col>
+
+            <v-col v-if="this.currentView === 'plate'">
+                <v-select v-model="statusValue" label="Status" :items="status" variant="outlined">
+                </v-select>
+            </v-col>
+
             <v-col class="d-flex justify-end align-center">
                 <v-btn class="mr-2" color="orange-darken-2" @click="onFilterSearch()">
                     Buscar
@@ -39,6 +48,22 @@ export default {
         dateValue: null,
         nameValue: null,
         sectorValue: null,
+        modelValue: null,
+        statusValue: null,
+        status: [
+            {
+                title: 'Não iniciada',
+                value: 0,
+            },
+            {
+                title: 'Em andamento',
+                value: 1,
+            },
+            {
+                title: 'Finalizada',
+                value: 2,
+            }
+        ],
     }),
     emits: ['onFilterSearch', 'onClearFilter'],
     computed: {
@@ -59,12 +84,29 @@ export default {
                     setornome: this.sectorValue
                 }
             }
+
+            if (this.currentView === 'typeplate') {
+                param = {
+                    ...param,
+                    modelo: this.modelValue
+                }
+            }
+
+            if (this.currentView === 'plate') {
+                param = {
+                    ...param,
+                    status: this.statusValue
+                }
+            }
+
             this.$emit('onFilterSearch', param)
         },
         onClearFilter() {
             this.dateValue = null;
             this.nameValue = null;
             this.sectorValue = null
+            this.modelValue = null;
+            this.statusValue = null;
 
             this.$emit('onClearFilter')
         }

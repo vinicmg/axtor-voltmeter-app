@@ -1,8 +1,10 @@
 import http from '@/http-common';
 
 class PlateService {
-    getAll(): Promise<any> {
-        return http.get('/placa')
+    getAll(params): Promise<any> {
+        return http.get('/placa', {
+            params
+        })
     }
     create(data: any): Promise<any> {
         return http.post('/cadastro/placa', data)

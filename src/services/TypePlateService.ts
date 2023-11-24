@@ -1,8 +1,10 @@
 import http from '@/http-common';
 
 class TypePlateService {
-    getAll(): Promise<any> {
-        return http.get('/tipodeplaca');
+    getAll(params): Promise<any> {
+        return http.get('/tipodeplaca', {
+            params
+        });
     }
     create(data: any): Promise<any> {
         return http.post('/cadastro/tipodeplaca', data)
