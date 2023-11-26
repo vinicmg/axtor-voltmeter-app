@@ -11,7 +11,7 @@
         </v-main>
 
         <v-footer height="0.1vh" color="transparent" class="d-flex justify-center align-end">
-            <span class="footer" color="white">© 2023 Axtor Bancadas e Ferramentas</span>
+            <span>© 2023 Axtor Bancadas e Ferramentas</span>
         </v-footer>
     </v-app>
 </template>
@@ -28,8 +28,4 @@ const sidebarStore = useSideBarStore();
 const { isOpen } = storeToRefs(sidebarStore)
 </script>
 
-<style>
-.footer {
-    color: white
-}
-</style>
+<style></style>

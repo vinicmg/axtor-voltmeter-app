@@ -1,24 +1,24 @@
 <template>
     <v-container>
         <v-row class="bg-white border rounded">
-            <v-col cols="3" sm="3" md="3" class="d-flex align-center">
+            <v-col cols="12" sm="3" md="3" class="d-flex align-center">
                 <v-text-field v-model="formattedDate" readonly variant="outlined" label="Data de Cadastro"
                     prepend-icon="mdi-calendar" @click:control="isOpen = !isOpen"></v-text-field>
             </v-col>
-            <v-col cols="3" sm="3" md="3" class="d-flex align-center">
+            <v-col cols="12" sm="3" md="3" class="d-flex align-center">
                 <v-text-field variant="outlined" label="Nome" v-model="nameValue">
                 </v-text-field>
             </v-col>
 
-            <v-col v-if="this.currentView === 'technician'">
+            <v-col cols="12" sm="3" md="3" v-if="this.currentView === 'technician'">
                 <v-text-field variant="outlined" label="Setor" v-model="sectorValue"></v-text-field>
             </v-col>
 
-            <v-col v-if="this.currentView === 'typeplate'">
+            <v-col cols="12" sm="3" md="3" v-if="this.currentView === 'typeplate'">
                 <v-text-field variant="outlined" label="Modelo" v-model="modelValue"></v-text-field>
             </v-col>
 
-            <v-col v-if="this.currentView === 'plate'">
+            <v-col cols="12" sm="3" md="3" v-if="this.currentView === 'plate'">
                 <v-select v-model="statusValue" label="Status" :items="status" variant="outlined">
                 </v-select>
             </v-col>
@@ -32,7 +32,6 @@
                 </v-btn>
             </v-col>
         </v-row>
-
         <v-dialog v-model="isOpen" max-width="500px">
             <v-date-picker v-model="dateValue" @update:model-value="isOpen = !isOpen"></v-date-picker>
         </v-dialog>

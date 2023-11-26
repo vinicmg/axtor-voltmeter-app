@@ -37,6 +37,11 @@ const router = createRouter({
       path: '/relatorios',
       name: 'Relatórios',
       component: () => import('../views/ReportView.vue')
+    },
+    {
+      path: '/passo-a-passo/:id',
+      name: 'Passo a passo',
+      component: () => import('../views/stepbystep/PlateView.vue')
     }
   ]
 })

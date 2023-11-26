@@ -40,7 +40,8 @@
                   <tr align="right">
                     <th></th>
                     <td>
-                      <v-chip variant="elevated" :color="getStatusColor(item.raw.status)">
+                      <v-chip variant="elevated" :color="getStatusColor(item.raw.status)" elevation="1" link
+                        :to="{ name: 'Passo a passo', params: { id: item.raw.id } }">
                         {{ this.getStatusText(item.raw.status) }}
                       </v-chip>
                     </td>
@@ -97,7 +98,7 @@ export default defineComponent({
         case 2:
           return 'Finalizado'
       }
-    }
+    },
   },
 })
 
