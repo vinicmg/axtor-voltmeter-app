@@ -1,9 +1,9 @@
 <template>
-    <v-app class="bg_image">
+    <v-app>
         <sideBar></sideBar>
         <v-app-bar :color="colors.primary" app>
             <v-app-bar-nav-icon @click="isOpen = !isOpen"></v-app-bar-nav-icon>
-            <v-app-bar-title class="d-flex justify-center">Axtor Bancadas</v-app-bar-title>
+            <v-app-bar-title class="d-flex justify-center">Axtor Bancadas e Ferramentas</v-app-bar-title>
         </v-app-bar>
 
         <v-main>
@@ -29,11 +29,6 @@ const { isOpen } = storeToRefs(sidebarStore)
 </script>
 
 <style>
-.bg_image {
-    background: url("assets/bg_main.jpg") no-repeat center center fixed;
-    background-size: cover;
-}
-
 .footer {
     color: white
 }

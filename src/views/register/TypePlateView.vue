@@ -1,7 +1,7 @@
 <template>
   <v-container class="my-5">
     <CustomFilter :current-view="'typeplate'" @on-filter-search="onFilterSearch" @on-clear-filter="onClearFilter" />
-    <v-data-table :headers="headers" :items="typePlates" height="50vh">
+    <v-data-table :headers="headers" :items="typePlates">
       <template v-slot:top>
         <v-toolbar flat>
           <v-toolbar-title>Tipos de Placa</v-toolbar-title>

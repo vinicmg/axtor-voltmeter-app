@@ -1,7 +1,7 @@
 <template>
     <v-container class="my-5">
         <CustomFilter :current-view="'technician'" @on-filter-search="onFilterSearch" @on-clear-filter="onClearFilter" />
-        <v-data-table :headers="headers" :items="technicians" height="50vh">
+        <v-data-table :headers="headers" :items="technicians">
             <template v-slot:top>
                 <v-toolbar flat>
                     <v-toolbar-title>Técnicos</v-toolbar-title>

@@ -1,7 +1,7 @@
 <template>
   <v-container class="my-5">
     <CustomFilter :current-view="'plate'" @on-filter-search="onOnFilterSearch" @on-clear-filter="onClearFilter" />
-    <v-data-table :headers="headers" :items="plates" height="50vh">
+    <v-data-table :headers="headers" :items="plates">
       <template v-slot:top>
         <v-toolbar flat>
           <v-toolbar-title>Placas</v-toolbar-title>
@@ -78,7 +78,9 @@
         <span>{{ new Date(item.createdAt).toLocaleString() }}</span>
       </template>
       <template v-slot:[`item.status`]="{ item }">
-        <span>{{ statusFormatted(item.status) }}</span>
+        <v-chip variant="elevated" :color="getStatusColor(item.status)">
+          {{ statusFormatted(item.status) }}
+        </v-chip>
       </template>
       <template v-slot:[`item.actions`]="{ item }">
         <v-icon size="small" class="me-2" @click="editItem(item)">
@@ -296,7 +298,17 @@ export default defineComponent({
         default:
           return 'Não iniciada'
       }
-    }
+    },
+    getStatusColor(status) {
+      switch (status) {
+        case 0:
+          return 'green'
+        case 1:
+          return 'blue-grey'
+        case 2:
+          return 'red'
+      }
+    },
   }
 })
 
