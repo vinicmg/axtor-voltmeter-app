@@ -76,7 +76,10 @@ export default defineComponent({
       this.getPlates();
     },
     async getPlates() {
-      let response = await PlateService.getAll()
+      let param = {
+        status: this.$route.params.status
+      }
+      let response = await PlateService.getAll(param)
       this.items = response.data;
     },
     getStatusColor(status) {

@@ -10,7 +10,13 @@ const router = createRouter({
     {
       path: '/placas',
       name: 'Placas',
-      component: () => import('../views/PlateView.vue')
+      component: () => import('../views/PlateView.vue'),
+      children: [
+        {
+          path: '/placas/:status',
+          component: () => import('../views/PlateView.vue')
+        }
+      ]
     },
     {
       path: '/cadastro/setor',
