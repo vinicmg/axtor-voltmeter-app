@@ -97,7 +97,7 @@
                   </v-container>
 
                   <label>Trimpots</label>
-                  <v-container class="border border-dark">
+                  <v-container class="border border-dark mb-4">
                     <v-row>
                       <v-col cols="6" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv1" label="RV1" variant="outlined" suffix="kΩ"
@@ -150,8 +150,8 @@
                     </v-row>
                   </v-container>
 
-                  <label>Oscilográfia</label>
-                  <v-container>
+                  <label>Fonte Principal</label>
+                  <v-container class="border border-dark mb-4">
                     <v-row>
                       <v-col cols="6" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_5_min" label="5v - Min" variant="outlined" type="number">
@@ -159,16 +159,6 @@
                       </v-col>
                       <v-col cols="6" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_5_max" label="5v - Max" variant="outlined" type="number">
-                        </v-text-field>
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_gnd_min" label="GND - Min" variant="outlined" type="number">
-                        </v-text-field>
-                      </v-col>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_gnd_max" label="GND - Max" variant="outlined" type="number">
                         </v-text-field>
                       </v-col>
                     </v-row>
@@ -194,6 +184,10 @@
                         </v-text-field>
                       </v-col>
                     </v-row>
+                  </v-container>
+
+                  <label>Osciloscópio</label>
+                  <v-container class="border border-dark">
                     <v-row>
                       <v-col cols="6" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_1khz_min" label="1kHz - Min" variant="outlined"

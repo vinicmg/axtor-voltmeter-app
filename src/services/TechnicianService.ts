@@ -1,7 +1,7 @@
 import http from '@/http-common';
 
 class TechnicianService {
-    getAll(params): Promise<any> {
+    getAll(params: any): Promise<any> {
         return http.get('/tecnico', {
             params
         });
