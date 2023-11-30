@@ -19,10 +19,10 @@
                 </template>
 
                 <v-list-item to="/cadastro/placas">Placas</v-list-item>
-                <v-list-item to="/cadastro/tipodeplaca">Tipos de Placa</v-list-item>
                 <v-list-item to="/cadastro/configuracao">Configurações</v-list-item>
-                <v-list-item to="/cadastro/setor">Setor</v-list-item>
+                <v-list-item to="/cadastro/tipodeplaca">Tipos de Placa</v-list-item>
                 <v-list-item to="/cadastro/tecnico">Técnico</v-list-item>
+                <v-list-item to="/cadastro/setor">Setor</v-list-item>
             </v-list-group>
             <v-list-item to="/relatorios">Relatórios</v-list-item>
         </v-list>
