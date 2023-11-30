@@ -7,7 +7,7 @@
         </v-app-bar>
 
         <v-main>
-            <RouterView />
+            <RouterView :key="$route.fullPath" />
         </v-main>
 
         <v-footer height="0.1vh" color="transparent" class="d-flex justify-center align-end">

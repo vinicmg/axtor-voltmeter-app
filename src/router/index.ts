@@ -4,9 +4,19 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: '/',
+      redirect: { path: '/placas' }
+    },
+    {
       path: '/placas',
       name: 'Placas',
-      component: () => import('../views/PlateView.vue')
+      component: () => import('../views/PlateView.vue'),
+      children: [
+        {
+          path: '/placas/:status',
+          component: () => import('../views/PlateView.vue')
+        }
+      ]
     },
     {
       path: '/cadastro/setor',

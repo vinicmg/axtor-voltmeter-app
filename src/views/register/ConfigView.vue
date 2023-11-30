@@ -29,33 +29,33 @@
                   <label>Pré Gravação</label>
                   <v-container class="border border-dark mb-4">
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.pregrav_5_min" label="5v - Min" variant="outlined" suffix="mA"
                           type="number"></v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.pregrav_5_max" label="5v - Max" variant="outlined" suffix="mA"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.pregrav_12_min" label="12v - Min" variant="outlined" suffix="mA"
                           type="number"></v-text-field>
                       </v-col>
 
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.pregrav_12_max" label="12v - Max" variant="outlined" suffix="mA"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.pregrav_neg12_min" label="-12v - Min" variant="outlined"
                           suffix="mA" type="number"></v-text-field>
                       </v-col>
 
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.pregrav_neg12_max" label="-12v - Max" variant="outlined"
                           suffix="mA" type="number"></v-text-field>
                       </v-col>
@@ -65,7 +65,7 @@
                   <label>Pós Gravação</label>
                   <v-container class="border border-dark mb-4">
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.posgrav_5_min" label="5v - Min" variant="outlined" suffix="mA"
                           type="number"></v-text-field>
                       </v-col>
@@ -75,7 +75,7 @@
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.posgrav_12_min" label="12v - Min" variant="outlined" suffix="mA"
                           type="number"></v-text-field>
                       </v-col>
@@ -85,7 +85,7 @@
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.posgrav_neg12_min" label="-12v - Min" variant="outlined"
                           suffix="mA" type="number"></v-text-field>
                       </v-col>
@@ -97,137 +97,339 @@
                   </v-container>
 
                   <label>Trimpots</label>
-                  <v-container class="border border-dark">
+                  <v-container class="border border-dark mb-4">
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv1" label="RV1" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv2" label="RV2" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv3" label="RV3" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv4" label="RV4" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv5" label="RV5" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv6" label="RV6" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv7" label="RV7" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv8" label="RV8" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv9" label="RV9" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.trim_rv10" label="RV10" variant="outlined" suffix="kΩ"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
                   </v-container>
 
-                  <label>Oscilográfia</label>
-                  <v-container>
+                  <label>Fonte Principal</label>
+                  <v-container class="border border-dark mb-4">
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_5_min" label="5v - Min" variant="outlined" type="number">
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fp_5_min" label="5V - Min" variant="outlined" type="number">
                         </v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_5_max" label="5v - Max" variant="outlined" type="number">
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fp_5_max" label="5V - Max" variant="outlined" type="number">
                         </v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_gnd_min" label="GND - Min" variant="outlined" type="number">
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fp_12_min" label="12V - Min" variant="outlined" type="number">
                         </v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_gnd_max" label="GND - Max" variant="outlined" type="number">
-                        </v-text-field>
-                      </v-col>
-                    </v-row>
-                    <v-row>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_12_min" label="12v - Min" variant="outlined" type="number">
-                        </v-text-field>
-                      </v-col>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_12_max" label="12v - Max" variant="outlined" type="number">
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fp_12_max" label="12V - Max" variant="outlined" type="number">
                         </v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_neg12_min" label="-12v - Min" variant="outlined"
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fp_neg12_min" label="-12V - Min" variant="outlined"
                           type="number">
                         </v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
-                        <v-text-field v-model="editedItem.osc_neg12_max" label="-12v - Max" variant="outlined"
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fp_neg12_max" label="-12V - Max" variant="outlined"
                           type="number">
                         </v-text-field>
                       </v-col>
                     </v-row>
+                  </v-container>
+
+                  <label>Osciloscópio</label>
+                  <v-container class="border border-dark mb-4">
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_1khz_min" label="1kHz - Min" variant="outlined"
                           type="number">
                         </v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_1khz_max" label="1kHz - Max" variant="outlined"
                           type="number">
                         </v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.osc_1khz_duty_min" label="1kHz Duty - Min" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col>
+                        <v-text-field v-model="editedItem.osc_1khz_duty_max" label="1kHz Duty - Max" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_100hz_min" label="100Hz - Min" variant="outlined"
                           type="number">
                         </v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_100hz_max" label="100Hz - Max" variant="outlined"
                           type="number">
                         </v-text-field>
                       </v-col>
                     </v-row>
                     <v-row>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_10khz_min" label="10kHz - Min" variant="outlined"
                           type="number">
                         </v-text-field>
                       </v-col>
-                      <v-col cols="6" sm="6" md="6">
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_10khz_max" label="10kHz - Max" variant="outlined"
                           type="number">
                         </v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Capacitância</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.capacitancia_min" label="Min" variant="outlined" suffix="mF"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.capacitancia_max" label="Max" variant="outlined" suffix="mF"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Sensibilidade de Corrente</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.sens_corrent_min" label="Min" variant="outlined" suffix="mV/A"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.sens_corrent_max" label="Max" variant="outlined" suffix="mV/A"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Indutância D12</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.indutancia_min" label="Min" variant="outlined" suffix="mH"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.indutancia_max" label="Max" variant="outlined" suffix="mH"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Corrente de Atracamento Scania 044</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.corr_atracad12_min" label="Min" variant="outlined" suffix="A"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.corr_atracad12_max" label="Max" variant="outlined" suffix="A"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Offset Cabos</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.offset_cabos_min" label="Min" variant="outlined" suffix="mΩ"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.offset_cabos_max" label="Max" variant="outlined" suffix="mΩ"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Corrente de Atracamento D13</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.corr_atracad13a_min" label="Bobina A - Min" variant="outlined"
+                          suffix="A" type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.corr_atracad13a_max" label="Bobina A - Max" variant="outlined"
+                          suffix="A" type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.corr_atracad13b_min" label="Bobina B - Min" variant="outlined"
+                          suffix="A" type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.corr_atracad13b_max" label="Bobina B - Max" variant="outlined"
+                          suffix="A" type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>PWM Pulsador</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.pwm_pulsador_min" label="Min" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.pwm_pulsador_max" label="Max" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>PWM Vedação</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.pwm_vedacao_min" label="Max" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.pwm_vedacao_max" label="Max" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Megohmetro</label>
+                  <v-container class="border border-dark mb-4">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.res_carcaca_min" label="Min" variant="outlined" suffix="KΩ"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.res_carcaca_max" label="Max" variant="outlined" suffix="KΩ"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.res_hv_min" label="Min" variant="outlined" suffix="KΩ"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.res_hv_max" label="Max" variant="outlined" suffix="KΩ"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+
+                  <label>Fonte FV300</label>
+                  <v-container class="border border-dark">
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fb_duty_min" label="Fonte Boost - Duty - Min" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fb_duty_max" label="Fonte Boost - Duty - Max" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fb_tensao_min" label="Fonte Boost - Tensão - Min"
+                          variant="outlined" type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.fb_tensao_max" label="Fonte Boost - Tensão - Max"
+                          variant="outlined" type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.tb_linear" label="Correção Tensão Boost - Linear"
+                          variant="outlined" type="number"></v-text-field>
+                      </v-col>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.tb_proporcional" label="Correção Tensão Boost - Proporcional"
+                          variant="outlined" type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="12" md="12">
+                        <v-text-field v-model="editedItem.res_hv_megometro" label="Resistência HV Megometro"
+                          variant="outlined" type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="12" md="12">
+                        <v-text-field v-model="editedItem.offset_megometro" label="Offset Corrente Megometro"
+                          variant="outlined" type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="12" md="12">
+                        <v-text-field v-model="editedItem.res_megometro" label="Corrente Megometro" variant="outlined"
+                          type="number"></v-text-field>
                       </v-col>
                     </v-row>
                   </v-container>
@@ -343,22 +545,55 @@ export default defineComponent({
       trim_rv8: 0,
       trim_rv9: 0,
       trim_rv10: 0,
-      osc_5_min: 0,
-      osc_5_max: 0,
-      osc_gnd_min: 0,
-      osc_gnd_max: 0,
-      osc_12_min: 0,
-      osc_12_max: 0,
-      osc_neg12_min: 0,
-      osc_neg12_max: 0,
-      osc_vref_min: 0,
-      osc_vref_max: 0,
+      fp_5_min: 0,
+      fp_5_max: 0,
+      fp_12_min: 0,
+      fp_12_max: 0,
+      fp_neg12_min: 0,
+      fp_neg12_max: 0,
       osc_1khz_min: 0,
+      osc_1khz_duty_min: 0,
       osc_1khz_max: 0,
+      osc_1khz_duty_max: 0,
       osc_100hz_min: 0,
+      osc_100hz_duty_min: 0,
       osc_100hz_max: 0,
+      osc_100hz_duty_max: 0,
       osc_10khz_min: 0,
+      osc_10khz_duty_min: 0,
       osc_10khz_max: 0,
+      osc_10khz_duty_max: 0,
+      capacitancia_min: 0,
+      capacitancia_max: 0,
+      sens_corrent_min: 0,
+      sens_corrent_max: 0,
+      indutancia_min: 0,
+      indutancia_max: 0,
+      corr_atracad12_min: 0,
+      corr_atracad12_max: 0,
+      offset_cabos_min: 0,
+      offset_cabos_max: 0,
+      corr_atracad13a_min: 0,
+      corr_atracad13a_max: 0,
+      corr_atracad13b_min: 0,
+      corr_atracad13b_max: 0,
+      pwm_pulsador_min: 0,
+      pwm_pulsador_max: 0,
+      pwm_vedacao_min: 0,
+      pwm_vedacao_max: 0,
+      res_carcaca_min: 0,
+      res_carcaca_max: 0,
+      res_hv_min: 0,
+      res_hv_max: 0,
+      fb_duty_min: 0,
+      fb_duty_max: 0,
+      fb_tensao_min: 0,
+      fb_tensao_max: 0,
+      tb_linear: 0,
+      tb_proporcional: 0,
+      res_hv_megometro: 0,
+      offset_megometro: 0,
+      res_megometro: 0
     },
     defaultItem: {
       nome: '',
@@ -384,22 +619,55 @@ export default defineComponent({
       trim_rv8: 0,
       trim_rv9: 0,
       trim_rv10: 0,
-      osc_5_min: 0,
-      osc_5_max: 0,
-      osc_gnd_min: 0,
-      osc_gnd_max: 0,
-      osc_12_min: 0,
-      osc_12_max: 0,
-      osc_neg12_min: 0,
-      osc_neg12_max: 0,
-      osc_vref_min: 0,
-      osc_vref_max: 0,
+      fp_5_min: 0,
+      fp_5_max: 0,
+      fp_12_min: 0,
+      fp_12_max: 0,
+      fp_neg12_min: 0,
+      fp_neg12_max: 0,
       osc_1khz_min: 0,
+      osc_1khz_duty_min: 0,
       osc_1khz_max: 0,
+      osc_1khz_duty_max: 0,
       osc_100hz_min: 0,
+      osc_100hz_duty_min: 0,
       osc_100hz_max: 0,
+      osc_100hz_duty_max: 0,
       osc_10khz_min: 0,
+      osc_10khz_duty_min: 0,
       osc_10khz_max: 0,
+      osc_10khz_duty_max: 0,
+      capacitancia_min: 0,
+      capacitancia_max: 0,
+      sens_corrent_min: 0,
+      sens_corrent_max: 0,
+      indutancia_min: 0,
+      indutancia_max: 0,
+      corr_atracad12_min: 0,
+      corr_atracad12_max: 0,
+      offset_cabos_min: 0,
+      offset_cabos_max: 0,
+      corr_atracad13a_min: 0,
+      corr_atracad13a_max: 0,
+      corr_atracad13b_min: 0,
+      corr_atracad13b_max: 0,
+      pwm_pulsador_min: 0,
+      pwm_pulsador_max: 0,
+      pwm_vedacao_min: 0,
+      pwm_vedacao_max: 0,
+      res_carcaca_min: 0,
+      res_carcaca_max: 0,
+      res_hv_min: 0,
+      res_hv_max: 0,
+      fb_duty_min: 0,
+      fb_duty_max: 0,
+      fb_tensao_min: 0,
+      fb_tensao_max: 0,
+      tb_linear: 0,
+      tb_proporcional: 0,
+      res_hv_megometro: 0,
+      offset_megometro: 0,
+      res_megometro: 0
     }
   }),
   components: {

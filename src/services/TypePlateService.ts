@@ -1,7 +1,7 @@
 import http from '@/http-common';
 
 class TypePlateService {
-    getAll(params): Promise<any> {
+    getAll(params: any): Promise<any> {
         return http.get('/tipodeplaca', {
             params
         });
