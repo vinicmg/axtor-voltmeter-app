@@ -32,11 +32,11 @@
                     </v-col>
                   </v-row>
                   <v-row>
-                    <v-col cols="6" sm="6" md="6">
+                    <v-col cols="12" sm="6" md="6">
                       <v-select v-model="typePlate" label="Tipo de Placa" :items="typePlates"
                         variant="outlined"></v-select>
                     </v-col>
-                    <v-col cols="6" sm="6" md="6">
+                    <v-col cols="12" sm="6" md="6">
                       <v-select v-model="config" label="Configuração" :items="configs" variant="outlined"></v-select>
                     </v-col>
                   </v-row>
