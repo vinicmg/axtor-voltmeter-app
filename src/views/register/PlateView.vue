@@ -154,7 +154,7 @@ export default defineComponent({
       nome: '',
       num_serie: '',
       status: 0,
-      ultimo_passo: 0,
+      etapas: '',
       id_tp_placa: '',
       id_config: '',
       id_tecnico: ''
@@ -163,7 +163,7 @@ export default defineComponent({
       nome: '',
       num_serie: '',
       status: 0,
-      ultimo_passo: 0,
+      etapas: '',
       id_tp_placa: '',
       id_config: '',
       id_tecnico: ''
@@ -269,6 +269,25 @@ export default defineComponent({
       this.editedItem['id_tp_placa'] = this.typePlate;
       this.editedItem['id_config'] = this.config;
       this.editedItem['id_tecnico'] = this.technician;
+
+      let steps = [
+        {
+          show: false,
+          page: 'conf-mecanica-1',
+          status: 0,
+          title: 'Conferência Mecânica - Parte 1',
+          subtitle: 'Primeira etapa de conferência relizada pela equipe de mecânica com intuito de conferir os componentes da bancada.'
+        },
+        {
+          show: false,
+          page: 'conf-eletronica',
+          status: 0,
+          title: 'Conferência Eletrônica',
+          subtitle: 'Etapa de conferência eletrônica da placa da bancada.'
+        },
+      ]
+
+      this.editedItem['etapas'] = JSON.stringify(steps)
       if (this.editedIndex > -1) {
         Object.assign(this.plates[this.editedIndex], this.editedItem);
         await PlateService.update(this.editedItem.id, this.editedItem);

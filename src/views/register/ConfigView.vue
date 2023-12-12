@@ -224,6 +224,16 @@
                     </v-row>
                     <v-row>
                       <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.osc_100hz_duty_min" label="1kHz Duty - Min" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col>
+                        <v-text-field v-model="editedItem.osc_100hz_duty_max" label="1kHz Duty - Max" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
                         <v-text-field v-model="editedItem.osc_10khz_min" label="10kHz - Min" variant="outlined"
                           type="number">
                         </v-text-field>
@@ -232,6 +242,16 @@
                         <v-text-field v-model="editedItem.osc_10khz_max" label="10kHz - Max" variant="outlined"
                           type="number">
                         </v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row>
+                      <v-col cols="12" sm="6" md="6">
+                        <v-text-field v-model="editedItem.osc_10khz_duty_min" label="1kHz Duty - Min" variant="outlined"
+                          type="number"></v-text-field>
+                      </v-col>
+                      <v-col>
+                        <v-text-field v-model="editedItem.osc_10khz_duty_max" label="1kHz Duty - Max" variant="outlined"
+                          type="number"></v-text-field>
                       </v-col>
                     </v-row>
                   </v-container>
@@ -348,7 +368,7 @@
                   <v-container class="border border-dark mb-4">
                     <v-row>
                       <v-col cols="12" sm="6" md="6">
-                        <v-text-field v-model="editedItem.pwm_vedacao_min" label="Max" variant="outlined"
+                        <v-text-field v-model="editedItem.pwm_vedacao_min" label="Min" variant="outlined"
                           type="number"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="6">
