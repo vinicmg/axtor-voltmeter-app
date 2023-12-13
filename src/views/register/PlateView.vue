@@ -275,15 +275,22 @@ export default defineComponent({
           show: false,
           page: 'conf-mecanica-1',
           status: 0,
-          title: 'Conferência Mecânica - Parte 1',
-          subtitle: 'Primeira etapa de conferência relizada pela equipe de mecânica com intuito de conferir os componentes da bancada.'
+          title: 'Conferência Mecânica',
+          subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus nunc'
         },
         {
           show: false,
           page: 'conf-eletronica',
           status: 0,
           title: 'Conferência Eletrônica',
-          subtitle: 'Etapa de conferência eletrônica da placa da bancada.'
+          subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus nunc'
+        },
+        {
+          show: false,
+          page: 'conf-eletrica',
+          status: 0,
+          title: 'Conferência Elétrica',
+          subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus nunc'
         },
       ]
 

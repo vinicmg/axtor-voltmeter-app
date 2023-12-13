@@ -10,11 +10,14 @@
                             <v-card-title>
                                 {{ item.raw.title }}
                             </v-card-title>
+                            <v-card-subtitle>
+                                <span class="mb-3">Responsável: Vinicius</span>
+                            </v-card-subtitle>
                             <v-card-actions>
-                                <v-btn :color="getStatusColor(item.raw.status)" variant="text"
-                                    :to="{ name: item.raw.page }">
+                                <v-chip :color="getStatusColor(item.raw.status)" variant="elevated"
+                                    :to="{ name: item.raw.page, params: { id: this.$route.params.id } }">
                                     {{ this.getStatusText(item.raw.status) }}
-                                </v-btn>
+                                </v-chip>
                                 <v-spacer></v-spacer>
                                 <v-btn :icon="item.raw.show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
                                     @click="item.raw.show = !item.raw.show"></v-btn>
@@ -23,9 +26,15 @@
                             <v-expand-transition>
                                 <div v-show="item.raw.show">
                                     <v-divider></v-divider>
-
                                     <v-card-text>
-                                        {{ item.raw.subtitle }}
+                                        <v-row class="mt-1">
+                                            <span>{{ item.raw.subtitle }}</span>
+                                            <v-chip class="mt-4" color="orange-darken-4" label
+                                                @click="changeResponsable(item.raw.status)">
+                                                <v-icon start icon="mdi-pencil"></v-icon>
+                                                Alterar Responsável
+                                            </v-chip>
+                                        </v-row>
                                     </v-card-text>
                                 </div>
                             </v-expand-transition>
@@ -81,6 +90,9 @@ export default defineComponent({
                     return 'Concluído'
             }
         },
+        changeResponsable(val) {
+            alert('Mudar responsável...' + val)
+        }
     }
 })
 </script>

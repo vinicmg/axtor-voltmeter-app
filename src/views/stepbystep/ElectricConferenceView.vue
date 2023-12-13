@@ -16,7 +16,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -39,7 +39,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -62,7 +62,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -85,7 +85,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -108,7 +108,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -131,7 +131,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -154,7 +154,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -177,7 +177,7 @@
                                 :src="testImg" height="200"></v-img>
                             <div class="d-flex justify-center mt-2">
                                 <h3>
-                                    Conferência Mecânica
+                                    Conferência Elétrica
                                 </h3>
                             </div>
                             <div class="mx-5 my-4">
@@ -210,7 +210,7 @@ export default defineComponent({
         e1: 1,
         steps: 8,
         stepConfig: [
-            'Conferência Mecânica',
+            'Conferência Elétrica',
             'Cabos/Chicote Elétrico',
             'Acessórios Elétricos',
             'Carcaça vazia',
