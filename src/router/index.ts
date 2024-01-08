@@ -55,7 +55,7 @@ const router = createRouter({
     },
     {
       path: '/passo-a-passo/:id/conferencia-mecanica',
-      name: 'conf-mecanica-1',
+      name: 'conf-mecanica',
       component: () => import('../views/stepbystep/MechanicalConferenceView.vue'),
     },
     {
@@ -68,6 +68,11 @@ const router = createRouter({
       name: 'conf-eletrica',
       component: () => import('../views/stepbystep/ElectricConferenceView.vue'),
     },
+    {
+      path: '/passo-a-passo/:id/conferencia-qualidade',
+      name: 'conf-qualidade',
+      component: () => import('../views/stepbystep/QualityConferenceView.vue')
+    }
   ]
 })
 

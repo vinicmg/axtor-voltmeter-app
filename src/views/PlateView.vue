@@ -30,13 +30,8 @@
                 </template>
               </v-list-item>
 
-              <v-table density="compact" class="text-caption">
+              <v-table density="compact" class="my-1">
                 <tbody>
-                  <tr align="right">
-                    <th>Responsável:</th>
-
-                    <td>{{ item.raw.Technician.nome }}</td>
-                  </tr>
                   <tr align="right">
                     <th></th>
                     <td>

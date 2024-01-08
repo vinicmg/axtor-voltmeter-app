@@ -1,74 +1,264 @@
 <template>
     <div class="bg-white pa-5">
-        <v-data-iterator :items="this.items" items-per-page="4">
-            <template v-slot:default="{ items }">
-                <v-row>
-                    <v-col v-for="(item, i) in items" :key="i" cols="12" sm="4" md="4">
-                        <v-card border elevation="4">
-                            <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .4)`" :src="logo"
-                                height="100" class="mb-3"></v-img>
-                            <v-card-title>
-                                {{ item.raw.title }}
-                            </v-card-title>
-                            <v-card-subtitle>
-                                <span class="mb-3">Responsável: Vinicius</span>
-                            </v-card-subtitle>
-                            <v-card-actions>
-                                <v-chip :color="getStatusColor(item.raw.status)" variant="elevated"
-                                    :to="{ name: item.raw.page, params: { id: this.$route.params.id } }">
-                                    {{ this.getStatusText(item.raw.status) }}
-                                </v-chip>
-                                <v-spacer></v-spacer>
-                                <v-btn :icon="item.raw.show ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-                                    @click="item.raw.show = !item.raw.show"></v-btn>
-                            </v-card-actions>
+        <dialogSector :showDialog="dialog" @closeDialog="closeDialog"></dialogSector>
+        <v-row>
+            <v-col cols="12" sm="4" md="4">
+                <v-card border elevation="4">
+                    <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .4)`" :src="logo"
+                        height="100" class="mb-3"></v-img>
+                    <v-card-title>
+                        Conferência Mecânica
+                    </v-card-title>
+                    <v-card-subtitle>
+                        <!--<span class="mb-3">Responsável: {{ this.technicians[0].mecanica.nome }}</span>-->
+                    </v-card-subtitle>
+                    <v-card-actions>
+                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                            :to="{ name: 'conf-mecanica', params: { id: this.$route.params.id } }">
+                            {{ this.getStatusText(0) }}
+                        </v-chip>
+                        <v-spacer></v-spacer>
+                        <v-btn :icon="showMechanical ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                            @click="showMechanical = !showMechanical"></v-btn>
+                    </v-card-actions>
+                    <v-expand-transition>
+                        <div v-show="showMechanical">
+                            <v-divider></v-divider>
+                            <v-card-text>
+                                <v-row class="mx-1 my-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
+                                        nunc, eu
+                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
+                                        eros
+                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
+                                        tincidunt
+                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
+                                        Integer
+                                        auctor
+                                        porttitor convallis.</span>
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                        <v-icon start icon="mdi-pencil"></v-icon>
+                                        Alterar Responsável
+                                    </v-chip>
+                                </v-row>
+                            </v-card-text>
+                        </div>
+                    </v-expand-transition>
+                </v-card>
+            </v-col>
+            <v-col cols="12" sm="4" md="4">
+                <v-card border elevation="4">
+                    <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .4)`" :src="logo"
+                        height="100" class="mb-3"></v-img>
+                    <v-card-title>
+                        Conferência Eletrônica
+                    </v-card-title>
+                    <v-card-subtitle>
 
-                            <v-expand-transition>
-                                <div v-show="item.raw.show">
-                                    <v-divider></v-divider>
-                                    <v-card-text>
-                                        <v-row class="mt-1">
-                                            <span>{{ item.raw.subtitle }}</span>
-                                            <v-chip class="mt-4" color="orange-darken-4" label
-                                                @click="changeResponsable(item.raw.status)">
-                                                <v-icon start icon="mdi-pencil"></v-icon>
-                                                Alterar Responsável
-                                            </v-chip>
-                                        </v-row>
-                                    </v-card-text>
-                                </div>
-                            </v-expand-transition>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </template>
-        </v-data-iterator>
+                    </v-card-subtitle>
+                    <v-card-actions>
+                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                            :to="{ name: 'conf-eletronica', params: { id: this.$route.params.id } }">
+                            {{ this.getStatusText(0) }}
+                        </v-chip>
+                        <v-spacer></v-spacer>
+                        <v-btn :icon="showElectronic ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                            @click="showElectronic = !showElectronic"></v-btn>
+                    </v-card-actions>
+
+                    <v-expand-transition>
+                        <div v-show="showElectronic">
+                            <v-divider></v-divider>
+                            <v-card-text>
+                                <v-row class="mx-1 my-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
+                                        nunc, eu
+                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
+                                        eros
+                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
+                                        tincidunt
+                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
+                                        Integer
+                                        auctor
+                                        porttitor convallis.</span>
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                        <v-icon start icon="mdi-pencil"></v-icon>
+                                        Alterar Responsável
+                                    </v-chip>
+                                </v-row>
+                            </v-card-text>
+                        </div>
+                    </v-expand-transition>
+                </v-card>
+            </v-col>
+            <v-col cols="12" sm="4" md="4">
+                <v-card border elevation="4">
+                    <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .4)`" :src="logo"
+                        height="100" class="mb-3"></v-img>
+                    <v-card-title>
+                        Conferência Elétrica
+                    </v-card-title>
+                    <v-card-subtitle>
+
+                    </v-card-subtitle>
+                    <v-card-actions>
+                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                            :to="{ name: 'conf-eletrica', params: { id: this.$route.params.id } }">
+                            {{ this.getStatusText(0) }}
+                        </v-chip>
+                        <v-spacer></v-spacer>
+                        <v-btn :icon="showElectric ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                            @click="showElectric = !showElectric"></v-btn>
+                    </v-card-actions>
+
+                    <v-expand-transition>
+                        <div v-show="showElectric">
+                            <v-divider></v-divider>
+                            <v-card-text>
+                                <v-row class="mx-1 my-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
+                                        nunc, eu
+                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
+                                        eros
+                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
+                                        tincidunt
+                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
+                                        Integer
+                                        auctor
+                                        porttitor convallis.</span>
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                        <v-icon start icon="mdi-pencil"></v-icon>
+                                        Alterar Responsável
+                                    </v-chip>
+                                </v-row>
+                            </v-card-text>
+                        </div>
+                    </v-expand-transition>
+                </v-card>
+            </v-col>
+            <v-col cols="12" sm="4" md="4">
+                <v-card border elevation="4">
+                    <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .4)`" :src="logo"
+                        height="100" class="mb-3"></v-img>
+                    <v-card-title>
+                        Conferência de Qualidade
+                    </v-card-title>
+                    <v-card-subtitle>
+
+                    </v-card-subtitle>
+                    <v-card-actions>
+                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                            :to="{ name: 'conf-qualidade', params: { id: this.$route.params.id } }">
+                            {{ this.getStatusText(0) }}
+                        </v-chip>
+                        <v-spacer></v-spacer>
+                        <v-btn :icon="showQuality ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                            @click="showQuality = !showQuality"></v-btn>
+                    </v-card-actions>
+
+                    <v-expand-transition>
+                        <div v-show="showQuality">
+                            <v-divider></v-divider>
+                            <v-card-text>
+                                <v-row class="mx-1 my-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
+                                        nunc, eu
+                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
+                                        eros
+                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
+                                        tincidunt
+                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
+                                        Integer
+                                        auctor
+                                        porttitor convallis.</span>
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                        <v-icon start icon="mdi-pencil"></v-icon>
+                                        Alterar Responsável
+                                    </v-chip>
+                                </v-row>
+                            </v-card-text>
+                        </div>
+                    </v-expand-transition>
+                </v-card>
+            </v-col>
+            <v-col cols="12" sm="4" md="4">
+                <v-card border elevation="4">
+                    <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .4)`" :src="logo"
+                        height="100" class="mb-3"></v-img>
+                    <v-card-title>
+                        Conferência de Embalagem
+                    </v-card-title>
+                    <v-card-subtitle>
+
+                    </v-card-subtitle>
+                    <v-card-actions>
+                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                            :to="{ name: 'conf-mecanica', params: { id: this.$route.params.id } }">
+                            {{ this.getStatusText(0) }}
+                        </v-chip>
+                        <v-spacer></v-spacer>
+                        <v-btn :icon="showPacking ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+                            @click="showPacking = !showPacking"></v-btn>
+                    </v-card-actions>
+
+                    <v-expand-transition>
+                        <div v-show="showPacking">
+                            <v-divider></v-divider>
+                            <v-card-text>
+                                <v-row class="mx-1 my-1">
+                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
+                                        nunc, eu
+                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
+                                        eros
+                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
+                                        tincidunt
+                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
+                                        Integer
+                                        auctor
+                                        porttitor convallis.</span>
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                        <v-icon start icon="mdi-pencil"></v-icon>
+                                        Alterar Responsável
+                                    </v-chip>
+                                </v-row>
+                            </v-card-text>
+                        </div>
+                    </v-expand-transition>
+                </v-card>
+            </v-col>
+        </v-row>
+
+        <div class="action_finish">
+            <v-btn width="15vw" variant="flat" color="orange-darken-4" prepend-icon="mdi-check-circle" disabled="true"
+                @click="openFinishDialog">Finalizar</v-btn>
+        </div>
+
     </div>
 </template>
 <script>
 import { defineComponent } from 'vue'
 import icon from '@/assets/icon.png'
-import PlateService from '@/services/PlateService'
+import dialogSector from '@/components/dialog_sector.vue'
 
 export default defineComponent({
     data: () => ({
         logo: icon,
-        show: false,
-        items: []
+        showMechanical: false,
+        showElectronic: false,
+        showElectric: false,
+        showQuality: false,
+        showPacking: false,
+        dialog: false,
     }),
+    components: {
+        dialogSector,
+    },
     created() {
         this.initialize()
     },
     methods: {
         initialize() {
-            this.getPlate()
-        },
-        async getPlate() {
-            let param = {
-                id: this.$route.params.id
-            }
-            let response = await PlateService.getAll(param)
-            this.items = JSON.parse(response.data[0].etapas)
+
         },
         getStatusColor(status) {
             switch (status) {
@@ -90,9 +280,23 @@ export default defineComponent({
                     return 'Concluído'
             }
         },
-        changeResponsable(val) {
-            alert('Mudar responsável...' + val)
+        changeResponsable() {
+            this.dialog = true
+        },
+        closeDialog() {
+            this.dialog = false
+        },
+        openFinishDialog() {
+            alert('Finalizar')
         }
     }
 })
 </script>
+<style lang="scss">
+.action_finish {
+    z-index: 1000;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+</style>

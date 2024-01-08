@@ -40,11 +40,6 @@
                       <v-select v-model="config" label="Configuração" :items="configs" variant="outlined"></v-select>
                     </v-col>
                   </v-row>
-                  <v-row>
-                    <v-col cols="12" sm="12" md="12">
-                      <v-select v-model="technician" label="Técnico" :items="technicians" variant="outlined"></v-select>
-                    </v-col>
-                  </v-row>
                 </v-container>
               </v-card-text>
 
@@ -108,7 +103,6 @@ import { defineComponent } from 'vue';
 import PlateService from '@/services/PlateService';
 import TypePlateService from '@/services/TypePlateService';
 import ConfigService from '@/services/ConfigService';
-import TechnicianService from '@/services/TechnicianService';
 import CustomFilter from '@/components/custom-filter.vue'
 
 export default defineComponent({
@@ -120,8 +114,6 @@ export default defineComponent({
     typePlate: null,
     configs: [],
     config: null,
-    technicians: [],
-    technician: null,
     headers: [
       {
         title: 'ID',
@@ -154,19 +146,15 @@ export default defineComponent({
       nome: '',
       num_serie: '',
       status: 0,
-      etapas: '',
       id_tp_placa: '',
-      id_config: '',
-      id_tecnico: ''
+      id_config: ''
     },
     defaultItem: {
       nome: '',
       num_serie: '',
       status: 0,
-      etapas: '',
       id_tp_placa: '',
-      id_config: '',
-      id_tecnico: ''
+      id_config: ''
     }
   }),
   components: {
@@ -193,7 +181,6 @@ export default defineComponent({
       this.getPlates();
       this.getTypePlates();
       this.getConfigs();
-      this.getTechnicians();
     },
     async getPlates() {
       let response = await PlateService.getAll();
@@ -219,22 +206,11 @@ export default defineComponent({
         return config;
       })
     },
-    async getTechnicians() {
-      let response = await TechnicianService.getAll();
-      this.technicians = response.data.map(item => {
-        let technician = {
-          title: item.nome,
-          value: item.id,
-        };
-        return technician;
-      })
-    },
     editItem(item) {
       this.editedIndex = this.plates.indexOf(item);
       this.editedItem = Object.assign({}, item);
       this.typePlate = item.id_tp_placa;
       this.config = item.id_config;
-      this.technician = item.id_tecnico;
       this.dialog = true;
     },
     deleteItem(item) {
@@ -268,33 +244,6 @@ export default defineComponent({
     async save() {
       this.editedItem['id_tp_placa'] = this.typePlate;
       this.editedItem['id_config'] = this.config;
-      this.editedItem['id_tecnico'] = this.technician;
-
-      let steps = [
-        {
-          show: false,
-          page: 'conf-mecanica-1',
-          status: 0,
-          title: 'Conferência Mecânica',
-          subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus nunc'
-        },
-        {
-          show: false,
-          page: 'conf-eletronica',
-          status: 0,
-          title: 'Conferência Eletrônica',
-          subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus nunc'
-        },
-        {
-          show: false,
-          page: 'conf-eletrica',
-          status: 0,
-          title: 'Conferência Elétrica',
-          subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus nunc'
-        },
-      ]
-
-      this.editedItem['etapas'] = JSON.stringify(steps)
       if (this.editedIndex > -1) {
         Object.assign(this.plates[this.editedIndex], this.editedItem);
         await PlateService.update(this.editedItem.id, this.editedItem);
