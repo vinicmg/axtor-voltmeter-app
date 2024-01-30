@@ -1,5 +1,6 @@
 <template>
     <v-container class="quality_conference">
+        <dialogSector :showDialog="dialog" @closeDialog="closeDialog" @saveDialog="saveDialog"></dialogSector>
         <h2 class="d-flex justify-center text-white">Aferição AXD1001</h2>
         <v-expansion-panels>
             <v-expansion-panel>
@@ -33,7 +34,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414051" variant="underlined"
+                                        density="compact" type="number"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -50,7 +52,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414051" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -67,7 +70,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414051" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -84,7 +88,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414051" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -101,7 +106,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0414051" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -109,7 +115,8 @@
                                     <span>1.1.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0414051" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Scania 044 (0 414 701 044) SN 044766 -->
@@ -133,7 +140,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN044766" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -150,7 +158,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN044766" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -167,7 +176,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414701044_SN044766" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -184,7 +194,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414701044_SN044766"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -201,7 +212,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0414701044_SN044766" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -209,7 +221,8 @@
                                     <span>1.2.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0414701044_SN044766" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Scania 044 (0 414 701 044) SN 045204 -->
@@ -233,7 +246,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN045204" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -250,7 +264,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN045204" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -267,7 +282,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414701044_SN045204" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -284,7 +300,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414701044_SN045204"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -301,7 +318,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0414701044_SN045204" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -309,7 +327,8 @@
                                     <span>1.3.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0414701044_SN045204" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Scania 019 (0 414 701 019) SN 084388 -->
@@ -333,7 +352,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414701019" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -350,7 +370,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414701019" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -367,7 +388,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414701019" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -384,7 +406,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414701019" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -401,7 +424,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0414701019" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -409,7 +433,8 @@
                                     <span>1.4.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0414701019" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- D13A 21340611 (REPARADO OU ANTIGO) -->
@@ -433,8 +458,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340611_antigo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340611_antigo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -451,8 +478,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_2134061_antigo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_2134061_antigo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -469,8 +498,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_2134061_antigo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_2134061_antigo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -487,8 +518,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -505,7 +538,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_21340611_antigo" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -513,7 +547,8 @@
                                     <span>1.5.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_21340611_antigo" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- D13A 21340611 (NOVO) -->
@@ -537,8 +572,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340611_novo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340611_novo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -555,8 +592,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_2134061_novo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_2134061_novo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -573,8 +612,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_2134061_novo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_2134061_novo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -591,8 +632,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_novo_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_novo_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -609,7 +652,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_21340611_novo" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -617,7 +661,8 @@
                                     <span>1.6.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_21340611_novo" variant="underlined"
+                                        density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- D13A 21340616 (SN000000001) -->
@@ -641,8 +686,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000001_1"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000001_2"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -659,8 +706,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -677,8 +726,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000001_1"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000001_2"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -695,8 +746,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000001_1"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000001_2"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -713,7 +766,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_21340616_SN000000001" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -721,7 +775,8 @@
                                     <span>1.7.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_21340616_SN000000001"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- D13A 21340616 (SN000000002) -->
@@ -745,8 +800,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000002_1"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000002_2"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -763,8 +820,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -781,8 +840,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000002_1"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000002_2"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -799,8 +860,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000002_1"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000002_2"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -817,7 +880,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_21340616_SN000000002" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -825,7 +889,8 @@
                                     <span>1.8.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_21340616_SN000000002" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Bosch UP OM900 (0 414 799 008) -->
@@ -849,7 +914,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414799008" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -866,7 +932,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414799008" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -883,8 +950,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414799008" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -901,7 +968,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414799008" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -909,7 +977,8 @@
                                     <span>1.9.5 Vedação (USAR BOMBA DE VACUO)</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.vedacao_0414799008" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -926,7 +995,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0414799008" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -934,7 +1004,8 @@
                                     <span>1.9.7 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0414799008" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Bosch UP OM457 (0 414 799 005) -->
@@ -958,7 +1029,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414799005" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -975,7 +1047,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414799005" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -992,7 +1065,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414799005" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1009,7 +1083,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414799005" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1026,7 +1101,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0414799005" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1034,7 +1110,8 @@
                                     <span>1.10.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0414799005" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- D12C BEBE4B12004 -->
@@ -1058,7 +1135,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_BEBE4B12004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1075,7 +1153,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_BEBE4B12004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1092,8 +1171,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_BEBE4B12004_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_BEBE4B12004_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1110,7 +1191,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_BEBE4B12004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1127,7 +1209,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_BEBE4B12004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1135,7 +1218,8 @@
                                     <span>1.11.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_BEBE4B12004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- D12D BEBE4C00101 -->
@@ -1159,7 +1243,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_BEBE4C00101" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1176,7 +1261,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_BEBE4C00101" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1193,7 +1279,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_BEBE4C00101" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1210,7 +1297,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_BEBE4C00101" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1227,7 +1315,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_BEBE4C00101" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1235,7 +1324,8 @@
                                     <span>1.12.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_BEBE4C00101" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- IVECO 004 (0 414 703 004) -->
@@ -1259,7 +1349,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414703004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1276,7 +1367,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414703004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1293,7 +1385,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414703004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1310,7 +1403,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414703004" variant="underlined"
+                                        density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1327,7 +1421,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0414703004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1335,7 +1430,8 @@
                                     <span>1.13.6 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0414703004" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                         </tbody>
@@ -1373,7 +1469,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0445110273" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1390,7 +1487,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0445110273" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1398,7 +1496,8 @@
                                     <span>2.1.3 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0445110273" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1415,7 +1514,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0445110273" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1423,7 +1523,8 @@
                                     <span>2.1.5 Teste com relógio comparador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.relogio_comparador_0445110273" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Bosch Leve 2 (0 445 110 375) -->
@@ -1447,7 +1548,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0445110375" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1464,7 +1566,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0445110375" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1472,7 +1575,8 @@
                                     <span>2.2.3 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0445110375" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1489,7 +1593,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0445110375" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1506,7 +1611,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.relogio_comparador_0445110375" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Bosch Leve 2 (0 445 120 257) -->
@@ -1530,7 +1636,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0445120257" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1547,7 +1654,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0445120257" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1555,7 +1663,8 @@
                                     <span>2.3.3 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0445120257" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1572,7 +1681,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0445120257" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1589,7 +1699,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.relogio_comparador_0445120257" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Bosch Pesado CRIN1 (0 445 120 007 / 212 / 273) -->
@@ -1613,7 +1724,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0445120007" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1630,7 +1742,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0445120007" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1647,7 +1760,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0445120007" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1655,7 +1769,8 @@
                                     <span>2.4.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0445120007" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Denso Baixa (6C1Q 9K546 AC) -->
@@ -1679,7 +1794,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_6C1Q9K546AC" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1696,7 +1812,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_6C1Q9K546AC" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1713,7 +1830,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_6C1Q9K546AC" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1721,7 +1839,8 @@
                                     <span>2.5.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_6C1Q9K546AC" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Denso Alta (23670 0L050) -->
@@ -1745,7 +1864,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_236700L050" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1762,7 +1882,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_236700L050" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1779,7 +1900,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_236700L050" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1787,7 +1909,8 @@
                                     <span>2.6.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_236700L050" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Piezo Siemens (77550) Ranger -->
@@ -1811,7 +1934,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_77550" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1828,7 +1952,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.capacitancia_77550" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1845,7 +1970,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_77550" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1853,7 +1979,8 @@
                                     <span>2.7.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_77550" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Piezo BOSCH (0445 116 059) Amarok/LandRover -->
@@ -1877,7 +2004,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0445116059" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1894,7 +2022,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.capacitancia_0445116059" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1911,7 +2040,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0445116059" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1919,7 +2049,8 @@
                                     <span>2.8.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0445116059" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Piezo DENSO (23670- 30270) Hilux chicotinho -->
@@ -1943,7 +2074,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_2367030270" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1960,7 +2092,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.capacitancia_2367030270" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1977,7 +2110,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_2367030270" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1985,7 +2119,8 @@
                                     <span>2.9.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_2367030270" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- BOSCH XPI (CRIN4) -->
@@ -2009,7 +2144,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.bosch_xpi_CRIN4" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2026,7 +2162,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_CRIN4_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_CRIN4_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2043,7 +2182,10 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_CRIN4_1" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_CRIN4_2" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2060,7 +2202,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_CRIN4" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                         </tbody>
@@ -2098,7 +2241,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0928400614" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2115,7 +2259,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0928400614" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2132,7 +2277,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0928400614" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2140,7 +2286,8 @@
                                     <span>3.1.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0928400614" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2148,7 +2295,8 @@
                                     <span>3.1.5 Curso da Válvula (2400mm - Usar Relógio Comparador)</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.curso_valvula_0928400614" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Teste Válvula Bosch 0 281 006 032 -->
@@ -2172,7 +2320,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0281006032" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2189,7 +2338,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0281006032" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2206,7 +2356,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0281006032" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2214,7 +2365,8 @@
                                     <span>3.2.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0281006032" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Teste Válvula Bosch 0 281 002 241 -->
@@ -2238,7 +2390,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0281002241" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2255,7 +2408,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0281002241" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2272,7 +2426,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0281002241" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2280,7 +2435,8 @@
                                     <span>3.3.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0281002241" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Teste Válvula Bosch 0 281 002 698 -->
@@ -2304,7 +2460,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0281002698" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2321,7 +2478,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0281002698" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2338,7 +2496,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_028100269" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2346,7 +2505,8 @@
                                     <span>3.4.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0281002698" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Teste Válvula Bosch 0 281 006 074 -->
@@ -2370,7 +2530,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0281006074" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2387,7 +2548,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0281006074" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2404,7 +2566,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.isolacao_0281006074" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2412,7 +2575,8 @@
                                     <span>3.5.4 Pulsador</span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.pulsador_0281006074" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                         </tbody>
@@ -2449,7 +2613,8 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tensao_0281002982" type="number"
+                                        variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                         </tbody>
@@ -2465,182 +2630,399 @@
     </v-container>
 </template>
 <script>
+import StepQualityService from '@/services/StepQualityService'
+import dialogSector from '@/components/dialog_sector.vue'
 import { defineComponent } from 'vue';
 
 export default defineComponent({
+    components: {
+        dialogSector
+    },
     data: () => ({
-        resistencia_0414051: 0,
-        indutancia_0414051: 0,
-        atracamento_0414051: 0,
-        tempo_resposta_0414051: 0,
-        isolacao_0414051: 0,
-        pulsador_0414051: 0,
-        resistencia_0414701044_SN044766: 0,
-        indutancia_0414701044_SN044766: 0,
-        atracamento_0414701044_SN044766: 0,
-        tempo_resposta_0414701044_SN044766: 0,
-        isolacao_0414701044_SN044766: 0,
-        pulsador_0414701044_SN044766: 0,
-        resistencia_0414701044_SN045204: 0,
-        indutancia_0414701044_SN045204: 0,
-        atracamento_0414701044_SN045204: 0,
-        tempo_resposta_0414701044_SN045204: 0,
-        isolacao_0414701044_SN045204: 0,
-        pulsador_0414701044_SN045204: 0,
-        resistencia_0414701019: 0,
-        indutancia_0414701019: 0,
-        atracamento_0414701019: 0,
-        tempo_resposta_0414701019: 0,
-        isolacao_0414701019: 0,
-        pulsador_0414701019: 0,
-        resistencia_21340611_antigo_1: 0,
-        indutancia_2134061_antigo_1: 0,
-        atracamento_2134061_antigo_1: 0,
-        tempo_resposta_2134061_antigo_1: 0,
-        isolacao_21340611_antigo_1: 0,
-        pulsador_21340611_antigo_1: 0,
-        resistencia_21340611_antigo_2: 0,
-        indutancia_2134061_antigo_2: 0,
-        atracamento_2134061_antigo_2: 0,
-        tempo_resposta_2134061_antigo_2: 0,
-        isolacao_21340611_antigo_2: 0,
-        pulsador_21340611_antigo_2: 0,
-        resistencia_21340611_novo_1: 0,
-        indutancia_2134061_novo_1: 0,
-        atracamento_2134061_novo_1: 0,
-        tempo_resposta_2134061_novo_1: 0,
-        isolacao_21340611_novo_1: 0,
-        pulsador_21340611_novo_1: 0,
-        resistencia_21340611_novo_2: 0,
-        indutancia_2134061_novo_2: 0,
-        atracamento_2134061_novo_2: 0,
-        tempo_resposta_2134061_novo_2: 0,
-        isolacao_21340611_novo_2: 0,
-        pulsador_21340611_novo_2: 0,
-        resistencia_21340616_SN000000001_1: 0,
-        indutancia_21340616_SN000000001_1: 0,
-        atracamento_21340616_SN000000001_1: 0,
-        tempo_resposta_21340616_SN000000001_1: 0,
-        isolacao_21340616_SN000000001_1: 0,
-        pulsador_21340616_SN000000001_1: 0,
-        resistencia_21340616_SN000000002_1: 0,
-        indutancia_21340616_SN000000002_1: 0,
-        atracamento_21340616_SN000000002_1: 0,
-        tempo_resposta_21340616_SN000000002_1: 0,
-        isolacao_21340616_SN000000002_1: 0,
-        pulsador_21340616_SN000000002_1: 0,
-        resistencia_21340616_SN000000001_2: 0,
-        indutancia_21340616_SN000000001_2: 0,
-        atracamento_21340616_SN000000001_2: 0,
-        tempo_resposta_21340616_SN000000001_2: 0,
-        isolacao_21340616_SN000000001_2: 0,
-        pulsador_21340616_SN000000001_2: 0,
-        resistencia_21340616_SN000000002_2: 0,
-        indutancia_21340616_SN000000002_2: 0,
-        atracamento_21340616_SN000000002_2: 0,
-        tempo_resposta_21340616_SN000000002_2: 0,
-        isolacao_21340616_SN000000002_2: 0,
-        pulsador_21340616_SN000000002_2: 0,
-        resistencia_0414799008: 0,
-        indutancia_0414799008: 0,
-        atracamento_0414799008: 0,
-        tempo_resposta_0414799008: 0,
-        vedacao_0414799008: 0,
-        isolacao_0414799008: 0,
-        pulsador_0414799008: 0,
-        resistencia_0414799005: 0,
-        indutancia_0414799005: 0,
-        atracamento_0414799005: 0,
-        tempo_resposta_0414799005: 0,
-        isolacao_0414799005: 0,
-        pulsador_0414799005: 0,
-        resistencia_BEBE4B12004: 0,
-        indutancia_BEBE4B12004: 0,
-        atracamento_BEBE4B12004_1: 0,
-        atracamento_BEBE4B12004_2: 0,
-        tempo_resposta_BEBE4B12004: 0,
-        isolacao_BEBE4B12004: 0,
-        pulsador_BEBE4B12004: 0,
-        resistencia_BEBE4C00101: 0,
-        indutancia_BEBE4C00101: 0,
-        atracamento_BEBE4C00101: 0,
-        tempo_resposta_BEBE4C00101: 0,
-        resistencia_0414703004: 0,
-        indutancia_0414703004: 0,
-        atracamento_0414703004: 0,
-        tempo_resposta_0414703004: 0,
-        isolacao_0414703004: 0,
-        pulsador_0414703004: 0,
-        resistencia_0445110273: 0,
-        indutancia_0445110273: 0,
-        pulsador_0445110273: 0,
-        isolacao_0445110273: 0,
-        relogio_comparador_0445110273: 0,
-        resistencia_0445110375: 0,
-        indutancia_0445110375: 0,
-        pulsador_0445110375: 0,
-        isolacao_0445110375: 0,
-        relogio_comparador_0445110375: 0,
-        resistencia_0445120257: 0,
-        indutancia_0445120257: 0,
-        pulsador_0445120257: 0,
-        isolacao_0445120257: 0,
-        relogio_comparador_0445120257: 0,
-        resistencia_0445120007: 0,
-        indutancia_0445120007: 0,
-        isolacao_0445120007: 0,
-        pulsador_0445120007: 0,
-        resistencia_6C1Q9K546AC: 0,
-        indutancia_6C1Q9K546AC: 0,
-        isolacao_6C1Q9K546AC: 0,
-        pulsador_6C1Q9K546AC: 0,
-        resistencia_236700L050: 0,
-        indutancia_236700L050: 0,
-        isolacao_236700L050: 0,
-        pulsador_236700L050: 0,
-        resistencia_77550: 0,
-        capacitancia_77550: 0,
-        isolacao_77550: 0,
-        pulsador_77550: 0,
-        resistencia_0445116059: 0,
-        capacitancia_0445116059: 0,
-        isolacao_0445116059: 0,
-        pulsador_0445116059: 0,
-        resistencia_2367030270: 0,
-        capacitancia_2367030270: 0,
-        isolacao_2367030270: 0,
-        pulsador_2367030270: 0,
-        bosch_xpi_CRIN4: 0,
-        resistencia_CRIN4_1: 0,
-        resistencia_CRIN4_2: 0,
-        indutancia_CRIN4_1: 0,
-        indutancia_CRIN4_2: 0,
-        isolacao_CRIN4: 0,
-        resistencia_0928400614: 0,
-        indutancia_0928400614: 0,
-        isolacao_0928400614: 0,
-        pulsador_0928400614: 0,
-        curso_valvula_0928400614: 0,
-        resistencia_0281006032: 0,
-        indutancia_0281006032: 0,
-        isolacao_0281006032: 0,
-        pulsador_0281006032: 0,
-        resistencia_0281002241: 0,
-        indutancia_0281002241: 0,
-        isolacao_0281002241: 0,
-        pulsador_0281002241: 0,
-        resistencia_0281002698: 0,
-        indutancia_0281002698: 0,
-        isolacao_028100269: 0,
-        pulsador_0281002698: 0,
-        resistencia_0281006074: 0,
-        indutancia_0281006074: 0,
-        isolacao_0281006074: 0,
-        tensao_0281002982: 0,
+        dialog: false,
+        qualities: [],
+        editedIndex: -1,
+        editedItem: {
+            id: '',
+            id_placa: '',
+            status: 0,
+            dados: {
+                resistencia_0414051: 0,
+                indutancia_0414051: 0,
+                atracamento_0414051: 0,
+                tempo_resposta_0414051: 0,
+                isolacao_0414051: 0,
+                pulsador_0414051: 0,
+                resistencia_0414701044_SN044766: 0,
+                indutancia_0414701044_SN044766: 0,
+                atracamento_0414701044_SN044766: 0,
+                tempo_resposta_0414701044_SN044766: 0,
+                isolacao_0414701044_SN044766: 0,
+                pulsador_0414701044_SN044766: 0,
+                resistencia_0414701044_SN045204: 0,
+                indutancia_0414701044_SN045204: 0,
+                atracamento_0414701044_SN045204: 0,
+                tempo_resposta_0414701044_SN045204: 0,
+                isolacao_0414701044_SN045204: 0,
+                pulsador_0414701044_SN045204: 0,
+                resistencia_0414701019: 0,
+                indutancia_0414701019: 0,
+                atracamento_0414701019: 0,
+                tempo_resposta_0414701019: 0,
+                isolacao_0414701019: 0,
+                pulsador_0414701019: 0,
+                resistencia_21340611_antigo_1: 0,
+                indutancia_2134061_antigo_1: 0,
+                atracamento_2134061_antigo_1: 0,
+                tempo_resposta_2134061_antigo_1: 0,
+                isolacao_21340611_antigo: 0,
+                pulsador_21340611_antigo: 0,
+                resistencia_21340611_antigo_2: 0,
+                indutancia_2134061_antigo_2: 0,
+                atracamento_2134061_antigo_2: 0,
+                tempo_resposta_2134061_antigo_2: 0,
+                resistencia_21340611_novo_1: 0,
+                indutancia_2134061_novo_1: 0,
+                atracamento_2134061_novo_1: 0,
+                tempo_resposta_2134061_novo_1: 0,
+                isolacao_21340611_novo: 0,
+                pulsador_21340611_novo: 0,
+                resistencia_21340611_novo_2: 0,
+                indutancia_2134061_novo_2: 0,
+                atracamento_2134061_novo_2: 0,
+                tempo_resposta_2134061_novo_2: 0,
+                resistencia_21340616_SN000000001_1: 0,
+                indutancia_21340616_SN000000001_1: 0,
+                atracamento_21340616_SN000000001_1: 0,
+                tempo_resposta_21340616_SN000000001_1: 0,
+                isolacao_21340616_SN000000001: 0,
+                pulsador_21340616_SN000000001: 0,
+                resistencia_21340616_SN000000002_1: 0,
+                indutancia_21340616_SN000000002_1: 0,
+                atracamento_21340616_SN000000002_1: 0,
+                tempo_resposta_21340616_SN000000002_1: 0,
+                isolacao_21340616_SN000000002: 0,
+                pulsador_21340616_SN000000002: 0,
+                resistencia_21340616_SN000000001_2: 0,
+                indutancia_21340616_SN000000001_2: 0,
+                atracamento_21340616_SN000000001_2: 0,
+                tempo_resposta_21340616_SN000000001_2: 0,
+                resistencia_21340616_SN000000002_2: 0,
+                indutancia_21340616_SN000000002_2: 0,
+                atracamento_21340616_SN000000002_2: 0,
+                tempo_resposta_21340616_SN000000002_2: 0,
+                resistencia_0414799008: 0,
+                indutancia_0414799008: 0,
+                atracamento_0414799008: 0,
+                tempo_resposta_0414799008: 0,
+                vedacao_0414799008: 0,
+                isolacao_0414799008: 0,
+                pulsador_0414799008: 0,
+                resistencia_0414799005: 0,
+                indutancia_0414799005: 0,
+                atracamento_0414799005: 0,
+                tempo_resposta_0414799005: 0,
+                isolacao_0414799005: 0,
+                pulsador_0414799005: 0,
+                resistencia_BEBE4B12004: 0,
+                indutancia_BEBE4B12004: 0,
+                atracamento_BEBE4B12004_1: 0,
+                atracamento_BEBE4B12004_2: 0,
+                tempo_resposta_BEBE4B12004: 0,
+                isolacao_BEBE4B12004: 0,
+                pulsador_BEBE4B12004: 0,
+                resistencia_BEBE4C00101: 0,
+                indutancia_BEBE4C00101: 0,
+                atracamento_BEBE4C00101: 0,
+                tempo_resposta_BEBE4C00101: 0,
+                isolacao_BEBE4C00101: 0,
+                pulsador_BEBE4C00101: 0,
+                resistencia_0414703004: 0,
+                indutancia_0414703004: 0,
+                atracamento_0414703004: 0,
+                tempo_resposta_0414703004: 0,
+                isolacao_0414703004: 0,
+                pulsador_0414703004: 0,
+                resistencia_0445110273: 0,
+                indutancia_0445110273: 0,
+                pulsador_0445110273: 0,
+                isolacao_0445110273: 0,
+                relogio_comparador_0445110273: 0,
+                resistencia_0445110375: 0,
+                indutancia_0445110375: 0,
+                pulsador_0445110375: 0,
+                isolacao_0445110375: 0,
+                relogio_comparador_0445110375: 0,
+                resistencia_0445120257: 0,
+                indutancia_0445120257: 0,
+                pulsador_0445120257: 0,
+                isolacao_0445120257: 0,
+                relogio_comparador_0445120257: 0,
+                resistencia_0445120007: 0,
+                indutancia_0445120007: 0,
+                isolacao_0445120007: 0,
+                pulsador_0445120007: 0,
+                resistencia_6C1Q9K546AC: 0,
+                indutancia_6C1Q9K546AC: 0,
+                isolacao_6C1Q9K546AC: 0,
+                pulsador_6C1Q9K546AC: 0,
+                resistencia_236700L050: 0,
+                indutancia_236700L050: 0,
+                isolacao_236700L050: 0,
+                pulsador_236700L050: 0,
+                resistencia_77550: 0,
+                capacitancia_77550: 0,
+                isolacao_77550: 0,
+                pulsador_77550: 0,
+                resistencia_0445116059: 0,
+                capacitancia_0445116059: 0,
+                isolacao_0445116059: 0,
+                pulsador_0445116059: 0,
+                resistencia_2367030270: 0,
+                capacitancia_2367030270: 0,
+                isolacao_2367030270: 0,
+                pulsador_2367030270: 0,
+                bosch_xpi_CRIN4: 0,
+                resistencia_CRIN4_1: 0,
+                resistencia_CRIN4_2: 0,
+                indutancia_CRIN4_1: 0,
+                indutancia_CRIN4_2: 0,
+                isolacao_CRIN4: 0,
+                resistencia_0928400614: 0,
+                indutancia_0928400614: 0,
+                isolacao_0928400614: 0,
+                pulsador_0928400614: 0,
+                curso_valvula_0928400614: 0,
+                resistencia_0281006032: 0,
+                indutancia_0281006032: 0,
+                isolacao_0281006032: 0,
+                pulsador_0281006032: 0,
+                resistencia_0281002241: 0,
+                indutancia_0281002241: 0,
+                isolacao_0281002241: 0,
+                pulsador_0281002241: 0,
+                resistencia_0281002698: 0,
+                indutancia_0281002698: 0,
+                isolacao_028100269: 0,
+                pulsador_0281002698: 0,
+                resistencia_0281006074: 0,
+                indutancia_0281006074: 0,
+                isolacao_0281006074: 0,
+                pulsador_0281006074: 0,
+                tensao_0281002982: 0,
+            }
+        },
+        defaultItem: {
+            id: '',
+            id_placa: '',
+            status: 0,
+            dados: {
+                resistencia_0414051: 0,
+                indutancia_0414051: 0,
+                atracamento_0414051: 0,
+                tempo_resposta_0414051: 0,
+                isolacao_0414051: 0,
+                pulsador_0414051: 0,
+                resistencia_0414701044_SN044766: 0,
+                indutancia_0414701044_SN044766: 0,
+                atracamento_0414701044_SN044766: 0,
+                tempo_resposta_0414701044_SN044766: 0,
+                isolacao_0414701044_SN044766: 0,
+                pulsador_0414701044_SN044766: 0,
+                resistencia_0414701044_SN045204: 0,
+                indutancia_0414701044_SN045204: 0,
+                atracamento_0414701044_SN045204: 0,
+                tempo_resposta_0414701044_SN045204: 0,
+                isolacao_0414701044_SN045204: 0,
+                pulsador_0414701044_SN045204: 0,
+                resistencia_0414701019: 0,
+                indutancia_0414701019: 0,
+                atracamento_0414701019: 0,
+                tempo_resposta_0414701019: 0,
+                isolacao_0414701019: 0,
+                pulsador_0414701019: 0,
+                resistencia_21340611_antigo_1: 0,
+                indutancia_2134061_antigo_1: 0,
+                atracamento_2134061_antigo_1: 0,
+                tempo_resposta_2134061_antigo_1: 0,
+                isolacao_21340611_antigo: 0,
+                pulsador_21340611_antigo: 0,
+                resistencia_21340611_antigo_2: 0,
+                indutancia_2134061_antigo_2: 0,
+                atracamento_2134061_antigo_2: 0,
+                tempo_resposta_2134061_antigo_2: 0,
+                resistencia_21340611_novo_1: 0,
+                indutancia_2134061_novo_1: 0,
+                atracamento_2134061_novo_1: 0,
+                tempo_resposta_2134061_novo_1: 0,
+                isolacao_21340611_novo: 0,
+                pulsador_21340611_novo: 0,
+                resistencia_21340611_novo_2: 0,
+                indutancia_2134061_novo_2: 0,
+                atracamento_2134061_novo_2: 0,
+                tempo_resposta_2134061_novo_2: 0,
+                resistencia_21340616_SN000000001_1: 0,
+                indutancia_21340616_SN000000001_1: 0,
+                atracamento_21340616_SN000000001_1: 0,
+                tempo_resposta_21340616_SN000000001_1: 0,
+                isolacao_21340616_SN000000001: 0,
+                pulsador_21340616_SN000000001: 0,
+                resistencia_21340616_SN000000002_1: 0,
+                indutancia_21340616_SN000000002_1: 0,
+                atracamento_21340616_SN000000002_1: 0,
+                tempo_resposta_21340616_SN000000002_1: 0,
+                isolacao_21340616_SN000000002: 0,
+                pulsador_21340616_SN000000002: 0,
+                resistencia_21340616_SN000000001_2: 0,
+                indutancia_21340616_SN000000001_2: 0,
+                atracamento_21340616_SN000000001_2: 0,
+                tempo_resposta_21340616_SN000000001_2: 0,
+                resistencia_21340616_SN000000002_2: 0,
+                indutancia_21340616_SN000000002_2: 0,
+                atracamento_21340616_SN000000002_2: 0,
+                tempo_resposta_21340616_SN000000002_2: 0,
+                resistencia_0414799008: 0,
+                indutancia_0414799008: 0,
+                atracamento_0414799008: 0,
+                tempo_resposta_0414799008: 0,
+                vedacao_0414799008: 0,
+                isolacao_0414799008: 0,
+                pulsador_0414799008: 0,
+                resistencia_0414799005: 0,
+                indutancia_0414799005: 0,
+                atracamento_0414799005: 0,
+                tempo_resposta_0414799005: 0,
+                isolacao_0414799005: 0,
+                pulsador_0414799005: 0,
+                resistencia_BEBE4B12004: 0,
+                indutancia_BEBE4B12004: 0,
+                atracamento_BEBE4B12004_1: 0,
+                atracamento_BEBE4B12004_2: 0,
+                tempo_resposta_BEBE4B12004: 0,
+                isolacao_BEBE4B12004: 0,
+                pulsador_BEBE4B12004: 0,
+                resistencia_BEBE4C00101: 0,
+                indutancia_BEBE4C00101: 0,
+                atracamento_BEBE4C00101: 0,
+                tempo_resposta_BEBE4C00101: 0,
+                isolacao_BEBE4C00101: 0,
+                pulsador_BEBE4C00101: 0,
+                resistencia_0414703004: 0,
+                indutancia_0414703004: 0,
+                atracamento_0414703004: 0,
+                tempo_resposta_0414703004: 0,
+                isolacao_0414703004: 0,
+                pulsador_0414703004: 0,
+                resistencia_0445110273: 0,
+                indutancia_0445110273: 0,
+                pulsador_0445110273: 0,
+                isolacao_0445110273: 0,
+                relogio_comparador_0445110273: 0,
+                resistencia_0445110375: 0,
+                indutancia_0445110375: 0,
+                pulsador_0445110375: 0,
+                isolacao_0445110375: 0,
+                relogio_comparador_0445110375: 0,
+                resistencia_0445120257: 0,
+                indutancia_0445120257: 0,
+                pulsador_0445120257: 0,
+                isolacao_0445120257: 0,
+                relogio_comparador_0445120257: 0,
+                resistencia_0445120007: 0,
+                indutancia_0445120007: 0,
+                isolacao_0445120007: 0,
+                pulsador_0445120007: 0,
+                resistencia_6C1Q9K546AC: 0,
+                indutancia_6C1Q9K546AC: 0,
+                isolacao_6C1Q9K546AC: 0,
+                pulsador_6C1Q9K546AC: 0,
+                resistencia_236700L050: 0,
+                indutancia_236700L050: 0,
+                isolacao_236700L050: 0,
+                pulsador_236700L050: 0,
+                resistencia_77550: 0,
+                capacitancia_77550: 0,
+                isolacao_77550: 0,
+                pulsador_77550: 0,
+                resistencia_0445116059: 0,
+                capacitancia_0445116059: 0,
+                isolacao_0445116059: 0,
+                pulsador_0445116059: 0,
+                resistencia_2367030270: 0,
+                capacitancia_2367030270: 0,
+                isolacao_2367030270: 0,
+                pulsador_2367030270: 0,
+                bosch_xpi_CRIN4: 0,
+                resistencia_CRIN4_1: 0,
+                resistencia_CRIN4_2: 0,
+                indutancia_CRIN4_1: 0,
+                indutancia_CRIN4_2: 0,
+                isolacao_CRIN4: 0,
+                resistencia_0928400614: 0,
+                indutancia_0928400614: 0,
+                isolacao_0928400614: 0,
+                pulsador_0928400614: 0,
+                curso_valvula_0928400614: 0,
+                resistencia_0281006032: 0,
+                indutancia_0281006032: 0,
+                isolacao_0281006032: 0,
+                pulsador_0281006032: 0,
+                resistencia_0281002241: 0,
+                indutancia_0281002241: 0,
+                isolacao_0281002241: 0,
+                pulsador_0281002241: 0,
+                resistencia_0281002698: 0,
+                indutancia_0281002698: 0,
+                isolacao_028100269: 0,
+                pulsador_0281002698: 0,
+                resistencia_0281006074: 0,
+                indutancia_0281006074: 0,
+                isolacao_0281006074: 0,
+                pulsador_0281006074: 0,
+                tensao_0281002982: 0,
+            }
+        }
     }),
+    created() {
+        this.initialize()
+    },
     methods: {
+        initialize() {
+            this.getQualityForPlate()
+        },
+        async getQualityForPlate() {
+            let params = {
+                id_placa: this.$route.params.id
+            }
+            let response = await StepQualityService.getAll(params)
+            if (response.data) {
+                this.qualities = response.data
+                if (response.data.dados === null) {
+                    response.data.dados = this.defaultItem.dados
+                }
+                this.editedIndex = 0
+                this.editedItem = Object.assign({}, response.data);
+            }
+        },
         save() {
-            alert('Salvar...')
+            this.dialog = true
+        },
+        async saveDialog(technician) {
+            this.editedItem.id_placa = this.$route.params.id
+            this.editedItem.status = 2
+            this.editedItem.id_tecnico = technician
+            if (this.editedIndex > -1) {
+                Object.assign(this.qualities, this.editedItem)
+                await StepQualityService.update(this.editedItem.id, this.editedItem)
+            } else {
+                this.qualities.push(this.editedItem)
+                await StepQualityService.create(this.editedItem)
+            }
+            this.dialog = false
+            this.$router.go(-1)
+        },
+        closeDialog() {
+            this.dialog = false
         }
     }
 })

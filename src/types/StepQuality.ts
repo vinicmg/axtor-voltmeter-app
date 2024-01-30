@@ -3,5 +3,5 @@ export default interface StepQuality {
     id_tecnico: number,
     id_placa: number,
     status: number,
-    ultima_etapa: number,
+    dados: string
 }

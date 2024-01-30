@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white pa-5">
-        <dialogSector :showDialog="dialog" @closeDialog="closeDialog"></dialogSector>
+        <dialogSector :showDialog="dialog" @closeDialog="closeDialog" @saveDialog="saveDialog"></dialogSector>
         <v-row>
             <v-col cols="12" sm="4" md="4">
                 <v-card border elevation="4">
@@ -9,9 +9,6 @@
                     <v-card-title>
                         Conferência Mecânica
                     </v-card-title>
-                    <v-card-subtitle>
-                        <!--<span class="mb-3">Responsável: {{ this.technicians[0].mecanica.nome }}</span>-->
-                    </v-card-subtitle>
                     <v-card-actions>
                         <v-chip :color="getStatusColor(0)" variant="elevated"
                             :to="{ name: 'conf-mecanica', params: { id: this.$route.params.id } }">
@@ -36,7 +33,7 @@
                                         Integer
                                         auctor
                                         porttitor convallis.</span>
-                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(1)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
                                     </v-chip>
@@ -81,7 +78,7 @@
                                         Integer
                                         auctor
                                         porttitor convallis.</span>
-                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(2)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
                                     </v-chip>
@@ -99,12 +96,21 @@
                         Conferência Elétrica
                     </v-card-title>
                     <v-card-subtitle>
-
+                        <v-table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Responsável:
+                                    </td>
+                                    <td align="right">{{ this.getTechnicianName(this.stepElectric.id_tecnico) }}</td>
+                                </tr>
+                            </tbody>
+                        </v-table>
                     </v-card-subtitle>
                     <v-card-actions>
-                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                        <v-chip :color="getStatusColor(this.stepElectric.status)" variant="elevated"
                             :to="{ name: 'conf-eletrica', params: { id: this.$route.params.id } }">
-                            {{ this.getStatusText(0) }}
+                            {{ this.getStatusText(this.stepElectric.status) }}
                         </v-chip>
                         <v-spacer></v-spacer>
                         <v-btn :icon="showElectric ? 'mdi-chevron-up' : 'mdi-chevron-down'"
@@ -116,17 +122,8 @@
                             <v-divider></v-divider>
                             <v-card-text>
                                 <v-row class="mx-1 my-1">
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
-                                        nunc, eu
-                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
-                                        eros
-                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
-                                        tincidunt
-                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
-                                        Integer
-                                        auctor
-                                        porttitor convallis.</span>
-                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                    <span>Realizar a conferência elétrica antes da etapa de embalagem.</span>
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(3)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
                                     </v-chip>
@@ -144,12 +141,21 @@
                         Conferência de Qualidade
                     </v-card-title>
                     <v-card-subtitle>
-
+                        <v-table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Responsável:
+                                    </td>
+                                    <td align="right">{{ this.getTechnicianName(this.stepQuality.id_tecnico) }}</td>
+                                </tr>
+                            </tbody>
+                        </v-table>
                     </v-card-subtitle>
                     <v-card-actions>
-                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                        <v-chip :color="getStatusColor(this.stepQuality.status)" variant="elevated"
                             :to="{ name: 'conf-qualidade', params: { id: this.$route.params.id } }">
-                            {{ this.getStatusText(0) }}
+                            {{ this.getStatusText(this.stepQuality.status) }}
                         </v-chip>
                         <v-spacer></v-spacer>
                         <v-btn :icon="showQuality ? 'mdi-chevron-up' : 'mdi-chevron-down'"
@@ -161,17 +167,8 @@
                             <v-divider></v-divider>
                             <v-card-text>
                                 <v-row class="mx-1 my-1">
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
-                                        nunc, eu
-                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
-                                        eros
-                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
-                                        tincidunt
-                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
-                                        Integer
-                                        auctor
-                                        porttitor convallis.</span>
-                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                    <span>Realizar a conferência de qualidade antes da etapa de embalagem.</span>
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(4)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
                                     </v-chip>
@@ -216,7 +213,7 @@
                                         Integer
                                         auctor
                                         porttitor convallis.</span>
-                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable()">
+                                    <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(5)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
                                     </v-chip>
@@ -229,7 +226,7 @@
         </v-row>
 
         <div class="action_finish">
-            <v-btn width="15vw" variant="flat" color="orange-darken-4" prepend-icon="mdi-check-circle" disabled="true"
+            <v-btn width="15vw" variant="flat" color="orange-darken-4" prepend-icon="mdi-check-circle" :disabled="true"
                 @click="openFinishDialog">Finalizar</v-btn>
         </div>
 
@@ -239,6 +236,10 @@
 import { defineComponent } from 'vue'
 import icon from '@/assets/icon.png'
 import dialogSector from '@/components/dialog_sector.vue'
+import StepQualityService from '@/services/StepQualityService'
+import StepMechanicalService from '@/services/StepMechanicalService'
+import StepElectricService from '@/services/StepElectricService'
+import TechnicianService from '@/services/TechnicianService'
 
 export default defineComponent({
     data: () => ({
@@ -249,6 +250,17 @@ export default defineComponent({
         showQuality: false,
         showPacking: false,
         dialog: false,
+        stepMechanical: {
+            status: 0
+        },
+        stepQuality: {
+            status: 0
+        },
+        stepElectric: {
+            status: 0,
+        },
+        currentSectorTechnician: 0,
+        technicians: [],
     }),
     components: {
         dialogSector,
@@ -258,14 +270,44 @@ export default defineComponent({
     },
     methods: {
         initialize() {
-
+            this.getStepMechanical()
+            this.getStepQuality()
+            this.getStepElectric()
+            this.getAllTechnicians()
+        },
+        async getStepMechanical() {
+            let params = {
+                id_placa: this.$route.params.id
+            }
+            let response = await StepMechanicalService.getAll(params)
+            if (response.data) {
+                this.stepMechanical = response.data
+            }
+        },
+        async getStepQuality() {
+            let params = {
+                id_placa: this.$route.params.id
+            }
+            let response = await StepQualityService.getAll(params)
+            if (response.data) {
+                this.stepQuality = response.data
+            }
+        },
+        async getStepElectric() {
+            let params = {
+                id_placa: this.$route.params.id
+            }
+            let response = await StepElectricService.getAll(params)
+            if (response.data) {
+                this.stepElectric = response.data
+            }
         },
         getStatusColor(status) {
             switch (status) {
                 case 0:
                     return 'green'
                 case 1:
-                    return 'blue-grey'
+                    return 'light-blue-darken-2'
                 case 2:
                     return 'red'
             }
@@ -280,14 +322,91 @@ export default defineComponent({
                     return 'Concluído'
             }
         },
-        changeResponsable() {
+        changeResponsable(sector) {
+            this.currentSectorTechnician = sector
             this.dialog = true
         },
         closeDialog() {
             this.dialog = false
+            this.currentSectorTechnician = 0
+        },
+        saveDialog(technician) {
+            if (this.currentSectorTechnician != 0) {
+                switch (this.currentSectorTechnician) {
+                    case 1:
+                        this.saveMechanical(technician)
+                        break;
+                    case 2:
+                        this.saveElectronic(technician)
+                        break;
+                    case 3:
+                        this.saveElectric(technician)
+                        break;
+                    case 4:
+                        this.saveQuality(technician)
+                        break;
+                    case 5:
+                        this.savePacking(technician)
+                        break;
+                    default:
+                        break;
+                }
+            }
+            this.dialog = false
+            this.currentSectorTechnician = 0
         },
         openFinishDialog() {
             alert('Finalizar')
+        },
+        async saveMechanical(technician) {
+            const params = {
+                id_tecnico: technician,
+                id_placa: this.$route.params.id
+            }
+            if (this.stepMechanical.id) {
+                await StepMechanicalService.update(this.stepMechanical.id, params)
+            } else {
+                await StepMechanicalService.create(params)
+            }
+        },
+        async saveQuality(technician) {
+            const params = {
+                id_tecnico: technician,
+                id_placa: this.$route.params.id,
+            }
+            if (this.stepQuality.id) {
+                await StepQualityService.update(this.stepQuality.id, params)
+            } else {
+                await StepQualityService.create(params)
+            }
+
+            this.stepQuality.id_tecnico = technician
+        },
+        async saveElectric(technician) {
+            const params = {
+                id_tecnico: technician,
+                id_placa: this.$route.params.id,
+                status: 0,
+            }
+            if (this.stepElectric.id) {
+                await StepElectricService.update(this.stepElectric.id, params)
+            } else {
+                await StepElectricService.create(params)
+            }
+
+            this.stepElectric.id_tecnico = technician
+        },
+        getTechnicianName(technicianId) {
+            let value = this.technicians.find(obj => {
+                return obj.id === technicianId
+            })
+            if (value) {
+                return value.nome
+            }
+        },
+        async getAllTechnicians() {
+            let response = await TechnicianService.getAll()
+            this.technicians = response.data
         }
     }
 })

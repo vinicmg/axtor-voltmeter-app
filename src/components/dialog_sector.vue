@@ -18,7 +18,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="orange-darken-2" variant="outlined" @click="close">Cancelar</v-btn>
-                <v-btn color="orange-darken-2" variant="outlined">Salvar</v-btn>
+                <v-btn color="orange-darken-2" variant="outlined" @click="save">Salvar</v-btn>
                 <v-spacer></v-spacer>
             </v-card-actions>
         </v-card>
@@ -37,7 +37,7 @@ export default {
         technician: null,
         technicians: [],
     }),
-    emits: ['closeDialog'],
+    emits: ['closeDialog', 'saveDialog'],
     created() {
         this.initialize()
     },
@@ -58,6 +58,9 @@ export default {
         close() {
             this.$emit('closeDialog')
         },
+        save() {
+            this.$emit('saveDialog', this.technician)
+        }
     },
     watch: {
         showDialog: {
