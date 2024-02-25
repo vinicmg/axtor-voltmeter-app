@@ -604,9 +604,6 @@ export default defineComponent({
         this.initialize()
     },
     computed: {
-        disabledActions() {
-            return this.e1 === 1 ? 'prev' : this.e1 === this.steps ? 'next' : undefined
-        },
         isMobile() {
             if (window.innerWidth < 900) {
                 return true
@@ -655,7 +652,12 @@ export default defineComponent({
             return this.e1 === this.steps ? 'Concluir' : 'Próximo'
         },
         goBack() {
-            this.e1--
+            if (this.e1 !== 1) {
+                this.updateLastStep()
+                this.e1--
+            } else {
+                this.save()
+            }
         },
         goForward() {
             if (this.e1 !== this.steps) {

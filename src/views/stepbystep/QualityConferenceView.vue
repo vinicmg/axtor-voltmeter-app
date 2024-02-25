@@ -35,7 +35,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0414051" variant="underlined"
-                                        density="compact" type="number"></v-text-field>
+                                        density="compact" type="number" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -46,14 +46,14 @@
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
                                             <span>
-                                                L=1,01m H
+                                                L=1,01mH
                                             </span>
                                         </v-tooltip>
                                     </span>
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0414051" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -71,7 +71,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_0414051" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -89,7 +89,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_0414051" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -107,7 +107,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0414051" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -141,7 +141,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN044766" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -152,14 +152,14 @@
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
                                             <span>
-                                                L=1,02m H
+                                                L=1,02mH
                                             </span>
                                         </v-tooltip>
                                     </span>
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN044766" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -195,7 +195,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_0414701044_SN044766"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -213,7 +213,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0414701044_SN044766" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -247,7 +247,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN045204" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -258,14 +258,14 @@
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
                                             <span>
-                                                L=1,09m H
+                                                L=1,09mH
                                             </span>
                                         </v-tooltip>
                                     </span>
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN045204" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -283,7 +283,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_0414701044_SN045204" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -301,7 +301,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_0414701044_SN045204"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -319,7 +319,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0414701044_SN045204" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -353,7 +353,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0414701019" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -364,14 +364,14 @@
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
                                             <span>
-                                                L=1,01m H
+                                                L=1,01mH
                                             </span>
                                         </v-tooltip>
                                     </span>
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0414701019" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -389,7 +389,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_0414701019" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -407,7 +407,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_0414701019" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -425,7 +425,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0414701019" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -459,9 +459,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340611_antigo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340611_antigo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -479,9 +479,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_2134061_antigo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.indutancia_2134061_antigo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -499,9 +499,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_2134061_antigo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.atracamento_2134061_antigo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -519,9 +519,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -539,7 +539,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_21340611_antigo" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -573,9 +573,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340611_novo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340611_novo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -593,9 +593,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_2134061_novo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.indutancia_2134061_novo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -613,9 +613,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_2134061_novo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.atracamento_2134061_novo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -633,9 +633,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_novo_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_novo_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -653,7 +653,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_21340611_novo" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -687,9 +687,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000001_1"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000001_2"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -707,9 +707,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -727,9 +727,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000001_1"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="A"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000001_2"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -747,9 +747,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000001_1"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="us"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000001_2"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -767,7 +767,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_21340616_SN000000001" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -801,9 +801,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000002_1"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.resistencia_21340616_SN000000002_2"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -821,9 +821,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -841,9 +841,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000002_1"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="A"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.atracamento_21340616_SN000000002_2"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -861,9 +861,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000002_1"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="us"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_21340616_SN000000002_2"
-                                        type="number" variant="underlined" density="compact"></v-text-field>
+                                        type="number" variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -881,7 +881,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_21340616_SN000000002" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -915,7 +915,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0414799008" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -933,7 +933,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0414799008" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -951,7 +951,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_0414799008" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -969,7 +969,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_0414799008" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -996,7 +996,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0414799008" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1030,7 +1030,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0414799005" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1048,7 +1048,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0414799005" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1066,7 +1066,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_0414799005" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1084,7 +1084,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_0414799005" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1102,7 +1102,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0414799005" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1136,7 +1136,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_BEBE4B12004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1154,7 +1154,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_BEBE4B12004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1172,9 +1172,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_BEBE4B12004_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.atracamento_BEBE4B12004_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1192,7 +1192,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_BEBE4B12004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="ms"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1210,7 +1210,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_BEBE4B12004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1244,7 +1244,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_BEBE4C00101" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1262,7 +1262,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_BEBE4C00101" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1280,7 +1280,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_BEBE4C00101" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1298,7 +1298,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_BEBE4C00101" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="ms"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1316,7 +1316,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_BEBE4C00101" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1350,7 +1350,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0414703004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1368,7 +1368,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0414703004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1386,7 +1386,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.atracamento_0414703004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1404,7 +1404,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tempo_resposta_0414703004" variant="underlined"
-                                        density="compact"></v-text-field>
+                                        density="compact" suffix="ms"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1422,7 +1422,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0414703004" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1470,7 +1470,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0445110273" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1488,7 +1488,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0445110273" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1515,7 +1515,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0445110273" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1549,7 +1549,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0445110375" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1567,7 +1567,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0445110375" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1594,7 +1594,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0445110375" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1612,7 +1612,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.relogio_comparador_0445110375" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="µm"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Bosch Leve 2 (0 445 120 257) -->
@@ -1637,7 +1637,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0445120257" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1655,7 +1655,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0445120257" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1682,7 +1682,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0445120257" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1700,7 +1700,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.relogio_comparador_0445120257" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="µm"></v-text-field>
                                 </th>
                             </tr>
                             <!-- Bosch Pesado CRIN1 (0 445 120 007 / 212 / 273) -->
@@ -1725,7 +1725,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0445120007" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1743,7 +1743,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0445120007" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1761,7 +1761,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0445120007" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1795,7 +1795,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_6C1Q9K546AC" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1813,7 +1813,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_6C1Q9K546AC" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1831,7 +1831,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_6C1Q9K546AC" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1865,7 +1865,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_236700L050" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1883,7 +1883,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_236700L050" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1901,7 +1901,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_236700L050" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1935,7 +1935,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_77550" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="kΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1953,7 +1953,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.capacitancia_77550" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uF"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -1971,7 +1971,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_77550" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2005,7 +2005,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0445116059" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="kΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2023,7 +2023,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.capacitancia_0445116059" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uF"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2041,7 +2041,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0445116059" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2075,7 +2075,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_2367030270" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="kΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2093,7 +2093,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.capacitancia_2367030270" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uF"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2111,7 +2111,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_2367030270" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2163,9 +2163,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_CRIN4_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.resistencia_CRIN4_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2183,9 +2183,9 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_CRIN4_1" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                     <v-text-field v-model="editedItem.dados.indutancia_CRIN4_2" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="uH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2203,7 +2203,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_CRIN4" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                         </tbody>
@@ -2242,7 +2242,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0928400614" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2260,7 +2260,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0928400614" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2278,7 +2278,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0928400614" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2321,7 +2321,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0281006032" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2339,7 +2339,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0281006032" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2357,7 +2357,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0281006032" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2391,7 +2391,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0281002241" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2409,7 +2409,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0281002241" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2427,7 +2427,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0281002241" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2461,7 +2461,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0281002698" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2479,7 +2479,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0281002698" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2497,7 +2497,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_028100269" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2531,7 +2531,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.resistencia_0281006074" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="Ω"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2549,7 +2549,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.indutancia_0281006074" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2567,7 +2567,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.isolacao_0281006074" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="MΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
@@ -2614,7 +2614,7 @@
                                 </th>
                                 <th>
                                     <v-text-field v-model="editedItem.dados.tensao_0281002982" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                        variant="underlined" density="compact" suffix="mV"></v-text-field>
                                 </th>
                             </tr>
                         </tbody>
