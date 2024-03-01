@@ -1677,7 +1677,7 @@ export default defineComponent({
     },
 })
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .action_button {
     position: absolute;
     bottom: 0;
