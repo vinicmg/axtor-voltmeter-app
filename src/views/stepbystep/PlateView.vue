@@ -9,10 +9,22 @@
                     <v-card-title>
                         Conferência Mecânica
                     </v-card-title>
+                    <v-card-subtitle>
+                        <v-table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Responsável:
+                                    </td>
+                                    <td align="right">{{ this.getTechnicianName(this.stepMechanical.id_tecnico) }}</td>
+                                </tr>
+                            </tbody>
+                        </v-table>
+                    </v-card-subtitle>
                     <v-card-actions>
-                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                        <v-chip :color="getStatusColor(this.stepMechanical.status)" variant="elevated"
                             :to="{ name: 'conf-mecanica', params: { id: this.$route.params.id } }">
-                            {{ this.getStatusText(0) }}
+                            {{ this.getStatusText(this.stepMechanical.status) }}
                         </v-chip>
                         <v-spacer></v-spacer>
                         <v-btn :icon="showMechanical ? 'mdi-chevron-up' : 'mdi-chevron-down'"
@@ -23,16 +35,6 @@
                             <v-divider></v-divider>
                             <v-card-text>
                                 <v-row class="mx-1 my-1">
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
-                                        nunc, eu
-                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
-                                        eros
-                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
-                                        tincidunt
-                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
-                                        Integer
-                                        auctor
-                                        porttitor convallis.</span>
                                     <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(1)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
@@ -51,12 +53,21 @@
                         Conferência Eletrônica
                     </v-card-title>
                     <v-card-subtitle>
-
+                        <v-table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Responsável:
+                                    </td>
+                                    <td align="right">{{ this.getTechnicianName(this.stepElectronic.id_tecnico) }}</td>
+                                </tr>
+                            </tbody>
+                        </v-table>
                     </v-card-subtitle>
                     <v-card-actions>
-                        <v-chip :color="getStatusColor(0)" variant="elevated"
+                        <v-chip :color="getStatusColor(this.stepElectronic.status)" variant="elevated"
                             :to="{ name: 'conf-eletronica', params: { id: this.$route.params.id } }">
-                            {{ this.getStatusText(0) }}
+                            {{ this.getStatusText(this.stepElectronic.status) }}
                         </v-chip>
                         <v-spacer></v-spacer>
                         <v-btn :icon="showElectronic ? 'mdi-chevron-up' : 'mdi-chevron-down'"
@@ -68,16 +79,6 @@
                             <v-divider></v-divider>
                             <v-card-text>
                                 <v-row class="mx-1 my-1">
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
-                                        nunc, eu
-                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
-                                        eros
-                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
-                                        tincidunt
-                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
-                                        Integer
-                                        auctor
-                                        porttitor convallis.</span>
                                     <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(2)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
@@ -122,7 +123,6 @@
                             <v-divider></v-divider>
                             <v-card-text>
                                 <v-row class="mx-1 my-1">
-                                    <span>Realizar a conferência elétrica antes da etapa de embalagem.</span>
                                     <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(3)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
@@ -167,7 +167,6 @@
                             <v-divider></v-divider>
                             <v-card-text>
                                 <v-row class="mx-1 my-1">
-                                    <span>Realizar a conferência de qualidade antes da etapa de embalagem.</span>
                                     <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(4)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
@@ -186,12 +185,23 @@
                         Conferência de Embalagem
                     </v-card-title>
                     <v-card-subtitle>
-
+                        <v-table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        Responsável:
+                                    </td>
+                                    <td align="right">{{ this.getTechnicianName(this.stepPacking.id_tecnico) }}</td>
+                                </tr>
+                            </tbody>
+                        </v-table>
+                        <v-alert v-if="showPackingAlert" text="Defina um técnico para continuar." variant="tonal"
+                            type="warning"></v-alert>
                     </v-card-subtitle>
                     <v-card-actions>
-                        <v-chip :color="getStatusColor(0)" variant="elevated"
-                            :to="{ name: 'conf-mecanica', params: { id: this.$route.params.id } }">
-                            {{ this.getStatusText(0) }}
+                        <v-chip :color="getPackingColor(this.stepPacking.status)" variant="elevated"
+                            @click="dispatchPackage()" :disabled="this.stepPacking.status === 1">
+                            {{ this.getPackingText(this.stepPacking.status) }}
                         </v-chip>
                         <v-spacer></v-spacer>
                         <v-btn :icon="showPacking ? 'mdi-chevron-up' : 'mdi-chevron-down'"
@@ -203,16 +213,6 @@
                             <v-divider></v-divider>
                             <v-card-text>
                                 <v-row class="mx-1 my-1">
-                                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultrices lacus
-                                        nunc, eu
-                                        porta sem pellentesque quis. Sed ornare ante sit amet hendrerit convallis. Quisque a
-                                        eros
-                                        accumsan, efficitur ipsum non, sagittis nibh. Phasellus vel pulvinar magna, quis
-                                        tincidunt
-                                        elit. Praesent commodo dignissim rhoncus. Curabitur sit amet lobortis turpis.
-                                        Integer
-                                        auctor
-                                        porttitor convallis.</span>
                                     <v-chip class="mt-4" color="orange-darken-4" label @click="changeResponsable(5)">
                                         <v-icon start icon="mdi-pencil"></v-icon>
                                         Alterar Responsável
@@ -232,6 +232,7 @@
 
     </div>
 </template>
+
 <script>
 import { defineComponent } from 'vue'
 import icon from '@/assets/icon.png'
@@ -240,6 +241,8 @@ import StepQualityService from '@/services/StepQualityService'
 import StepMechanicalService from '@/services/StepMechanicalService'
 import StepElectricService from '@/services/StepElectricService'
 import TechnicianService from '@/services/TechnicianService'
+import StepElectronicService from '@/services/StepElectronicService'
+import StepPackingService from '@/services/StepPackingService'
 
 export default defineComponent({
     data: () => ({
@@ -250,6 +253,7 @@ export default defineComponent({
         showQuality: false,
         showPacking: false,
         dialog: false,
+        showPackingAlert: false,
         stepMechanical: {
             status: 0
         },
@@ -257,6 +261,12 @@ export default defineComponent({
             status: 0
         },
         stepElectric: {
+            status: 0,
+        },
+        stepElectronic: {
+            status: 0,
+        },
+        stepPacking: {
             status: 0,
         },
         currentSectorTechnician: 0,
@@ -273,6 +283,8 @@ export default defineComponent({
             this.getStepMechanical()
             this.getStepQuality()
             this.getStepElectric()
+            this.getStepElectronic()
+            this.getStepPacking()
             this.getAllTechnicians()
         },
         async getStepMechanical() {
@@ -302,6 +314,24 @@ export default defineComponent({
                 this.stepElectric = response.data
             }
         },
+        async getStepElectronic() {
+            let params = {
+                id_placa: this.$route.params.id
+            }
+            let response = await StepElectronicService.getAll(params)
+            if (response.data) {
+                this.stepElectronic = response.data
+            }
+        },
+        async getStepPacking() {
+            let params = {
+                id_placa: this.$route.params.id
+            }
+            let response = await StepPackingService.getAll(params)
+            if (response.data) {
+                this.stepPacking = response.data
+            }
+        },
         getStatusColor(status) {
             switch (status) {
                 case 0:
@@ -320,6 +350,22 @@ export default defineComponent({
                     return 'Em andamento'
                 case 2:
                     return 'Concluído'
+            }
+        },
+        getPackingColor(status) {
+            switch (status) {
+                case 0:
+                    return 'green'
+                case 1:
+                    return 'red'
+            }
+        },
+        getPackingText(status) {
+            switch (status) {
+                case 0:
+                    return 'Despachar'
+                case 1:
+                    return 'Despachado'
             }
         },
         changeResponsable(sector) {
@@ -361,18 +407,25 @@ export default defineComponent({
         async saveMechanical(technician) {
             const params = {
                 id_tecnico: technician,
-                id_placa: this.$route.params.id
+                id_placa: this.$route.params.id,
+                status: 0,
+                ultima_etapa: 1
             }
             if (this.stepMechanical.id) {
                 await StepMechanicalService.update(this.stepMechanical.id, params)
             } else {
                 await StepMechanicalService.create(params)
             }
+
+            this.stepMechanical.id_tecnico = technician
+            this.stepMechanical.status = 0
         },
         async saveQuality(technician) {
             const params = {
                 id_tecnico: technician,
                 id_placa: this.$route.params.id,
+                status: 0,
+                ultima_etapa: 1,
             }
             if (this.stepQuality.id) {
                 await StepQualityService.update(this.stepQuality.id, params)
@@ -381,12 +434,14 @@ export default defineComponent({
             }
 
             this.stepQuality.id_tecnico = technician
+            this.stepQuality.status = 0
         },
         async saveElectric(technician) {
             const params = {
                 id_tecnico: technician,
                 id_placa: this.$route.params.id,
                 status: 0,
+                ultima_etapa: 1,
             }
             if (this.stepElectric.id) {
                 await StepElectricService.update(this.stepElectric.id, params)
@@ -395,6 +450,39 @@ export default defineComponent({
             }
 
             this.stepElectric.id_tecnico = technician
+            this.stepElectric.status = 0
+        },
+        async saveElectronic(technician) {
+            const params = {
+                id_tecnico: technician,
+                id_placa: this.$route.params.id,
+                status: 0,
+                ultima_etapa: 1,
+            }
+            if (this.stepElectronic.id) {
+                await StepElectronicService.update(this.stepElectronic.id, params)
+            } else {
+                await StepElectronicService.create(params)
+            }
+
+            this.stepElectronic.id_tecnico = technician
+            this.stepElectronic.status = 0
+        },
+        async savePacking(technician) {
+            const params = {
+                id_tecnico: technician,
+                id_placa: this.$route.params.id,
+                status: 0,
+            }
+            if (this.stepPacking.id) {
+                await StepPackingService.update(this.stepPacking.id, params)
+            } else {
+                await StepPackingService.create(params)
+            }
+            this.getStepPacking()
+
+            this.stepPacking.id_tecnico = technician
+            this.stepPacking.status = 0
         },
         getTechnicianName(technicianId) {
             let value = this.technicians.find(obj => {
@@ -407,10 +495,26 @@ export default defineComponent({
         async getAllTechnicians() {
             let response = await TechnicianService.getAll()
             this.technicians = response.data
+        },
+        async dispatchPackage() {
+            let params = {
+                status: 1
+            }
+
+            if (this.stepPacking.id) {
+                this.showPackingAlert = false
+                await StepPackingService.update(this.stepPacking.id, params).then(() => {
+                    this.stepPacking.status = 1
+                })
+            } else {
+                this.showPackingAlert = true
+            }
+
         }
     }
 })
 </script>
+
 <style lang="scss">
 .action_finish {
     z-index: 1000;

@@ -42,6 +42,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.1.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -60,6 +61,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.1.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -78,6 +80,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.1.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -96,6 +99,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.1.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -130,6 +134,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.2.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -140,14 +145,15 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN044766" type="number"
-                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN044766"
+                                        type="number" variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.2.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -158,14 +164,15 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN044766" type="number"
-                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN044766"
+                                        type="number" variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.2.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -176,14 +183,15 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.atracamento_0414701044_SN044766" type="number"
-                                        variant="underlined" density="compact"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414701044_SN044766"
+                                        type="number" variant="underlined" density="compact"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.2.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -202,6 +210,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.2.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -236,6 +245,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.3.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -246,14 +256,15 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN045204" type="number"
-                                        variant="underlined" density="compact" suffix="mΩ"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.resistencia_0414701044_SN045204"
+                                        type="number" variant="underlined" density="compact" suffix="mΩ"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.3.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -264,14 +275,15 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN045204" type="number"
-                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_0414701044_SN045204"
+                                        type="number" variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.3.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -282,14 +294,15 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.atracamento_0414701044_SN045204" type="number"
-                                        variant="underlined" density="compact" suffix="A"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.atracamento_0414701044_SN045204"
+                                        type="number" variant="underlined" density="compact" suffix="A"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.3.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -308,6 +321,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.3.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -342,6 +356,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.4.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -360,6 +375,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.4.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -378,6 +394,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.4.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -396,6 +413,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.4.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -414,6 +432,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.4.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -448,6 +467,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.5.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -468,6 +488,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.5.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -488,6 +509,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.5.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -508,6 +530,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.5.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -518,16 +541,17 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_1" type="number"
-                                        variant="underlined" density="compact" suffix="us"></v-text-field>
-                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_2" type="number"
-                                        variant="underlined" density="compact" suffix="us"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_1"
+                                        type="number" variant="underlined" density="compact" suffix="us"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_2134061_antigo_2"
+                                        type="number" variant="underlined" density="compact" suffix="us"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.5.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -562,6 +586,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.6.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -582,6 +607,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.6.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -602,6 +628,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.6.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -622,6 +649,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.6.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -642,6 +670,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.6.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -676,6 +705,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.7.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -696,6 +726,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.7.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -706,16 +737,17 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_1" type="number"
-                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
-                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_2" type="number"
-                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_1"
+                                        type="number" variant="underlined" density="compact" suffix="mH"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000001_2"
+                                        type="number" variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.7.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -736,6 +768,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.7.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -756,6 +789,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.7.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -790,6 +824,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.8.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -810,6 +845,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.8.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -820,16 +856,17 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_1" type="number"
-                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
-                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_2" type="number"
-                                        variant="underlined" density="compact" suffix="mH"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_1"
+                                        type="number" variant="underlined" density="compact" suffix="mH"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.indutancia_21340616_SN000000002_2"
+                                        type="number" variant="underlined" density="compact" suffix="mH"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.8.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -850,6 +887,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.8.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -870,6 +908,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.8.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -904,6 +943,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.9.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -922,6 +962,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.9.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -940,6 +981,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.9.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -958,6 +1000,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.9.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -985,6 +1028,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.9.6 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1019,6 +1063,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.10.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1037,6 +1082,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.10.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1055,6 +1101,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.10.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1073,6 +1120,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.10.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1091,6 +1139,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.10.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1125,6 +1174,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.11.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1143,6 +1193,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.11.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1161,6 +1212,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.11.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1181,6 +1233,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.11.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1199,6 +1252,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.11.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1233,6 +1287,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.12.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1251,6 +1306,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.12.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1269,6 +1325,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.12.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1287,6 +1344,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.12.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1305,6 +1363,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.12.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1339,6 +1398,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.13.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1357,6 +1417,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.13.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1375,6 +1436,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.13.3 Atracamento
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1393,6 +1455,7 @@
                                 <th class="th_content pl-10">
                                     <span>1.13.4 Tempo de Resposta
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1403,14 +1466,15 @@
                                     </span>
                                 </th>
                                 <th>
-                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414703004" variant="underlined"
-                                        density="compact" suffix="ms"></v-text-field>
+                                    <v-text-field v-model="editedItem.dados.tempo_resposta_0414703004"
+                                        variant="underlined" density="compact" suffix="ms"></v-text-field>
                                 </th>
                             </tr>
                             <tr>
                                 <th class="th_content pl-10">
                                     <span>1.13.5 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1459,6 +1523,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.1.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1477,6 +1542,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.1.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1504,6 +1570,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.1.4 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1538,6 +1605,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.2.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1556,6 +1624,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.2.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1583,6 +1652,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.2.4 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1601,6 +1671,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.2.5 Teste com relógio comparador
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1626,6 +1697,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.3.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1644,6 +1716,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.3.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1671,6 +1744,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.3.4 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1689,6 +1763,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.3.5 Teste com relógio comparador
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1714,6 +1789,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.4.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1732,6 +1808,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.4.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1750,6 +1827,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.4.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1784,6 +1862,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.5.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1802,6 +1881,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.5.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1820,6 +1900,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.5.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1854,6 +1935,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.6.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1872,6 +1954,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.6.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1890,6 +1973,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.6.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1924,6 +2008,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.7.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1942,6 +2027,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.7.2 Capacitância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1960,6 +2046,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.7.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -1994,6 +2081,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.8.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2012,6 +2100,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.8.2 Capacitância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2030,6 +2119,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.8.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2064,6 +2154,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.9.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2082,6 +2173,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.9.2 Capacitância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2100,6 +2192,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.9.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2134,6 +2227,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.10.1 BOSCH XPI
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2152,6 +2246,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.10.2 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2172,6 +2267,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.10.3 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2192,6 +2288,7 @@
                                 <th class="th_content pl-10">
                                     <span>2.10.4 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2231,6 +2328,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.1.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2249,6 +2347,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.1.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2267,6 +2366,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.1.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2310,6 +2410,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.2.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2328,6 +2429,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.2.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2346,6 +2448,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.2.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2380,6 +2483,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.2.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2398,6 +2502,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.3.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2416,6 +2521,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.3.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2450,6 +2556,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.4.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2468,6 +2575,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.4.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2486,6 +2594,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.4.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2520,6 +2629,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.5.1 Resistência
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2538,6 +2648,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.5.2 Indutância
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2556,6 +2667,7 @@
                                 <th class="th_content pl-10">
                                     <span>3.5.3 Isolação
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2603,6 +2715,7 @@
                                 <th class="th_content pl-10">
                                     <span>4.1.1 Tensão
                                         <v-tooltip activator="parent" location="end">
+
                                             <template v-slot:activator="{ props }">
                                                 <v-icon v-bind="props" end icon="mdi-information"></v-icon>
                                             </template>
@@ -2629,6 +2742,7 @@
         </div>
     </v-container>
 </template>
+
 <script>
 import StepQualityService from '@/services/StepQualityService'
 import dialogSector from '@/components/dialog_sector.vue'
@@ -3027,6 +3141,7 @@ export default defineComponent({
     }
 })
 </script>
+
 <style lang="scss">
 .th_content {
     border-right: 1px solid rgba($color: #000000, $alpha: 0.12);

@@ -1,33 +1,31 @@
 <template>
     <dialogSector :showDialog="dialog" @closeDialog="closeDialog" @saveDialog="saveDialog"></dialogSector>
-    <v-stepper v-model="e1" alt-labels :mobile="isMobile" hide-actions>
+    <v-stepper v-model="e1" alt-labels hide-actions>
         <v-stepper-header>
-            <template v-for="(n, i) in steps" :key="`${n}`">
-                <v-stepper-item :complete="e1 > n" :value="n" :title="this.stepConfig[i]"></v-stepper-item>
+            <template v-for="(n) in steps" :key="`${n}`">
+                <v-stepper-item :complete="e1 > n" :value="n"></v-stepper-item>
                 <v-divider v-if="n !== steps" :key="n"></v-divider>
             </template>
         </v-stepper-header>
         <v-stepper-window>
             <v-stepper-window-item :value="1">
                 <v-card border height="65vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6001_IMG"
-                            height="200" @click="showOverlay(CI6001_IMG)"></v-img>
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
                         <div class="d-flex justify-center mt-2">
                             <h3>
-                                Cabo de PC
+                                Instalação das fontes
                             </h3>
                         </div>
-                        <div class="mx-5 my-4">
-                            <span>Decapar 30cm de cabo, soldar a malha no GND(Fio Preto), deixar com 10cm o GND, BP(Branco
-                                do Preto),
-                                BV(Branco do Vermelho), colocar o termo e colocar conector 4 vias, deixar o cabo vermelho
-                                solto para
-                                futura fixação na placa. Do outro lado decapar o suficiente para soldar no conector DB9.
-                            </span>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>1. Fontes</span>
+                            <span class="px-5">✓ Fixar as fontes</span>
+                            <span class="px-5">✓ Nomear</span>
+                            <span class="px-5">✓ Na fonte G3 colocar os calços de EVA</span>
+                            <v-img :src="image1" height="200" @click="showOverlay(image1)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 1 - Instalação das Fontes</i></span>
                         </div>
                         <div class="px-5">
-                            <v-table density="compact" class="my-1">
+                            <v-table density="compact" class="my-1 border">
                                 <tbody>
                                     <tr>
                                         <th scope="col">Nome do Produto</th>
@@ -36,235 +34,28 @@
                                         <th scope="col">Quantidade</th>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo PKS 2P X 24 AWG</th>
-                                        <td>943</td>
-                                        <td>M</td>
-                                        <td>1,70</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector DB9</th>
-                                        <td></td>
+                                        <th scope="row">FONTE LRS-350-12 COLMEIA 30A 12V BIVOLT FTE 1230 / FTC
+                                            1230</th>
+                                        <td>4016</td>
                                         <td>UN</td>
-                                        <td>1</td>
+                                        <td>2</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Conector 3 vias</th>
-                                        <td></td>
+                                        <th scope="row">FONTE RT-50B COLMEIA TRIPLE-OUT 5V/12V/-12V</th>
+                                        <td>8338</td>
                                         <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                </tbody>
-                            </v-table>
-                        </div>
-                    </v-sheet>
-                </v-card>
-            </v-stepper-window-item>
-            <v-stepper-window-item :value="2">
-                <v-card border height="65vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6002_IMG"
-                            height="275" @click="showOverlay(CI6002_IMG)"></v-img>
-                        <div class="d-flex justify-center mt-2">
-                            <h3>
-                                Comunicação RS485
-                            </h3>
-                        </div>
-                        <div class="mx-5 my-4">
-                            <span>Soldar GND(PRETO) com GND, branco com vermelho e vermelho com branco, usar termo com cola
-                                para isolar.</span>
-                        </div>
-                        <div class="px-5">
-                            <v-table density="compact" class="my-1">
-                                <tbody>
-                                    <tr>
-                                        <th scope="col">Nome do Produto</th>
-                                        <th scope="col">Código</th>
-                                        <th scope="col">Unid</th>
-                                        <th scope="col">Quantidade</th>
+                                        <td>2</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 3x18mm AWG</th>
-                                        <td></td>
-                                        <td>M</td>
-                                        <td>6,60</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector DB9</th>
-                                        <td></td>
+                                        <th scope="row">PARAFUSO ALLEN C/C ABAULADA 4 X 12 - INOX.</th>
+                                        <td>5804</td>
                                         <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                </tbody>
-                            </v-table>
-                        </div>
-                    </v-sheet>
-                </v-card>
-            </v-stepper-window-item>
-            <v-stepper-window-item :value="3">
-                <v-card border height="65vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6003_IMG"
-                            height="200" @click="showOverlay(CI6003_IMG)"></v-img>
-                        <div class="d-flex justify-center mt-2">
-                            <h3>
-                                Posições 1, 2, 3, 4, 5 e 6
-                            </h3>
-                        </div>
-                        <div class="mx-5 my-4">
-                            <span>Decapar os cabos com suas respectivas medidas, estanhar as pontas mais compridas de ambos
-                                os cabos e colocar terminal tubular no lado dos conectores 4 vias, colocar o cabo de terra
-                                1,5mm² no lado mais comprido de ambos os cabos, se atentar a numeração dos cabos.</span>
-                        </div>
-                        <div class="px-5">
-                            <v-table density="compact" class="my-1">
-                                <tbody>
-                                    <tr>
-                                        <th scope="col">Nome do Produto</th>
-                                        <th scope="col">Código</th>
-                                        <th scope="col">Unid</th>
-                                        <th scope="col">Quantidade</th>
+                                        <td>8</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 12x1,5mm²</th>
-                                        <td></td>
-                                        <td>M</td>
-                                        <td>5,8</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Terminal tubular 1,5mm²</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>24</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector 4 vias</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>6</td>
-                                    </tr>
-                                </tbody>
-                            </v-table>
-                        </div>
-                    </v-sheet>
-                </v-card>
-            </v-stepper-window-item>
-            <v-stepper-window-item :value="4">
-                <v-card border height="90vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6004_IMG"
-                            height="200" @click="showOverlay(CI6004_IMG)"></v-img>
-                        <div class="d-flex justify-center mt-2">
-                            <h3>
-                                LED, PC e Botão ON/OFF
-                            </h3>
-                        </div>
-                        <div class="mx-5 my-4">
-                            <span>Decapar os quatro cabos, soldar todos os pretos e a malha do cabo azul juntos, soldar
-                                todos os cabos azuis juntos e o terra com o marrom e o branco do cabo azul. Em seguida
-                                colocar os conectores, o cabo do led vai ficar sozinho e o restante fica para o lado da
-                                placa. A seta do diodo fica para o lado do cabo contrario ao conector.</span>
-                        </div>
-                        <div class="px-5">
-                            <v-table density="compact" class="my-1">
-                                <tbody>
-                                    <tr>
-                                        <th scope="col">Nome do Produto</th>
-                                        <th scope="col">Código</th>
-                                        <th scope="col">Unid</th>
-                                        <th scope="col">Quantidade</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Cabo 2x1,5mm²</th>
-                                        <td>179</td>
-                                        <td>M</td>
-                                        <td>1,4</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Cabo 3x1,5mm²</th>
-                                        <td>938</td>
-                                        <td>M</td>
-                                        <td>1,6</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Cabo Azul</th>
-                                        <td></td>
-                                        <td>M</td>
-                                        <td>1,5</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Cabo Laranja</th>
-                                        <td></td>
-                                        <td>M</td>
-                                        <td>3,1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector 3 vias</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector LED</th>
-                                        <td>9021018</td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector P2</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Diodo 1N4007</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Botão de ligar máquina</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                </tbody>
-                            </v-table>
-                        </div>
-                    </v-sheet>
-                </v-card>
-            </v-stepper-window-item>
-            <v-stepper-window-item :value="5">
-                <v-card border height="65vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6005_IMG"
-                            height="200" @click="showOverlay(CI6005_IMG)"></v-img>
-                        <div class="d-flex justify-center mt-2">
-                            <h3>
-                                Outros Conectores
-                            </h3>
-                        </div>
-                        <div class="mx-5 my-4">
-                            <span>Decapar 10cm cada lado, soldar a malha no cabo preto e colocar termo com cola para isolar
-                                a malha, em seguida conectar o cabo nos conectores.</span>
-                        </div>
-                        <div class="px-5">
-                            <v-table density="compact" class="my-1">
-                                <tbody>
-                                    <tr>
-                                        <th scope="col">Nome do Produto</th>
-                                        <th scope="col">Código</th>
-                                        <th scope="col">Unid</th>
-                                        <th scope="col">Quantidade</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Cabo 2X18 AWG</th>
-                                        <td>756</td>
-                                        <td>M</td>
-                                        <td>0,5</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector 3 vias</th>
-                                        <td></td>
+                                        <th scope="row">PARAFUSO ALLEN C/C ABAULADADA 3X16 INOX (CISER
+                                            28410500)</th>
+                                        <td>4</td>
                                         <td>UN</td>
                                         <td>2</td>
                                     </tr>
@@ -274,23 +65,23 @@
                     </v-sheet>
                 </v-card>
             </v-stepper-window-item>
-            <v-stepper-window-item :value="6">
+            <v-stepper-window-item :value="2">
                 <v-card border height="65vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6006_IMG"
-                            height="200" @click="showOverlay(CI6006_IMG)"></v-img>
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
                         <div class="d-flex justify-center mt-2">
                             <h3>
-                                Outros Conectores
+                                Identificação dos conectores
                             </h3>
                         </div>
-                        <div class="mx-5 my-4">
-                            <span>Cortar os cabos de acordo com as medidas abaixo, colocar as tags 2cm antes da ponta do
-                                cabo e usar termo transparente. Conectar de acordo com a numeração mostrada no
-                                desenho.</span>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>2. Conectores DEGSON 2EDG</span>
+                            <span class="px-5">✓ Verificar rachaduras na estrutura</span>
+                            <span class="px-5">✓ Marcar os conectores com Etiquetas</span>
+                            <v-img :src="image2" height="200" @click="showOverlay(image2)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 2 - Conectores DEGSON 2EDG</i></span>
                         </div>
                         <div class="px-5">
-                            <v-table density="compact" class="my-1">
+                            <v-table density="compact" class="my-1 border">
                                 <tbody>
                                     <tr>
                                         <th scope="col">Nome do Produto</th>
@@ -299,20 +90,307 @@
                                         <th scope="col">Quantidade</th>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 2,5mm²</th>
-                                        <td></td>
-                                        <td>M</td>
-                                        <td>2,7</td>
+                                        <th scope="row">CONECTOR 5, 08 3 VIAS (FPH-3) DEGSON VERDE 2EDGKD-5.08-
+                                            03P-14-00Z(H)</th>
+                                        <td>9434</td>
+                                        <td>UN</td>
+                                        <td>2</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Conector 4 vias</th>
-                                        <td></td>
+                                        <th scope="row">CONECTOR 5, 08 2 VIAS (FPH-2) DEGSON VERDE 2EDGKD-5.08-
+                                            02P-14-00Z(H)</th>
+                                        <td>9433</td>
                                         <td>UN</td>
                                         <td>1</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Terminal garfo amarelo</th>
-                                        <td></td>
+                                        <th scope="row">CONECTOR 5, 08 4 VIAS (FPH-4) DEGSON VERDE 2EDGKD-5.08-
+                                            04P-14-00Z(H)</th>
+                                        <td>9378</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 8 VIAS (FPH-8) DEGSON VERDE 2EDGKD-5.08-
+                                            08P-14-00Z(H)</th>
+                                        <td>9436</td>
+                                        <td>UN</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 6 VIAS (FPH-6) DEGSON VERDE 2EDGKD-5.08-
+                                            06P-14-00Z(H)</th>
+                                        <td>9435</td>
+                                        <td>UN</td>
+                                        <td>2</td>
+                                    </tr>
+                                </tbody>
+                            </v-table>
+                        </div>
+                    </v-sheet>
+                </v-card>
+            </v-stepper-window-item>
+            <v-stepper-window-item :value="3">
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
+                        <div class="d-flex justify-center mt-2">
+                            <h3>
+                                Verificação de componentes elétricos
+                            </h3>
+                        </div>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>3. Chicote K2</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos e soldar cuidadosamente os terminais e
+                                cabos com estanho</span>
+                            <v-img :src="image3" height="200" @click="showOverlay(image3)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 3 – Chicote K2</i></span>
+                            <v-img :src="image4" height="200" @click="showOverlay(image4)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 4 – Esquema chicote K2</i></span>
+                        </div>
+                        <div class="px-5">
+                            <v-table density="compact" class="my-1 border">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Nome do Produto</th>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Unid</th>
+                                        <th scope="col">Quantidade</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO FLEX 1,5 MM BRANCO 750V</th>
+                                        <td>5399</td>
+                                        <td>M</td>
+                                        <td>1,22</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL TUBO 1,0MM VERMELHO</th>
+                                        <td>9422</td>
+                                        <td>UN</td>
+                                        <td>6</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL GARFINHO 2,5MM AZUL</th>
+                                        <td>6482</td>
+                                        <td>UN</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL GARFINHO 1,5MM VERMELHO</th>
+                                        <td>1083</td>
+                                        <td>UN</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 6 VIAS (FPH-6) DEGSON VERDE 2EDGKD-5.08-
+                                            06P-14-00Z(H)</th>
+                                        <td>9435</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </v-table>
+                        </div>
+                    </v-sheet>
+                </v-card>
+            </v-stepper-window-item>
+            <v-stepper-window-item :value="4">
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
+                        <div class="d-flex justify-center mt-2">
+                            <h3>
+                                Verificação de componentes elétricos
+                            </h3>
+                        </div>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>4. Chicote K3</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos e soldar cuidadosamente os terminais e
+                                cabos com estanho</span>
+                            <v-img :src="image5" height="200" @click="showOverlay(image5)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 5 – Chicote K3</i></span>
+                            <v-img :src="image6" height="200" @click="showOverlay(image6)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 6 – Esquema chicote K3</i></span>
+                        </div>
+                        <div class="px-5">
+                            <v-table density="compact" class="my-1 border">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Nome do Produto</th>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Unid</th>
+                                        <th scope="col">Quantidade</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 6 VIAS (FPH-6) DEGSON VERDE 2EDGKD-5.08-
+                                            06P-14-00Z(H)</th>
+                                        <td>9435</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 3 VIAS (FPH-3) DEGSON VERDE 2EDGKD-5.08-
+                                            03P-14-00Z(H)</th>
+                                        <td>9434</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 2 VIAS (FPH-2) DEGSON VERDE 2EDGKD-5.08-
+                                            02P-14-00Z(H)</th>
+                                        <td>9433</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL TUBO 1,0MM VERMELHO</th>
+                                        <td>9422</td>
+                                        <td>UN</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL GARFINHO 2,5MM AZUL</th>
+                                        <td>6482</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL GARFINHO 1,5MM VERMELHO</th>
+                                        <td>1083</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL TUBO 1,0MM VERMELHO</th>
+                                        <td>9422</td>
+                                        <td>M</td>
+                                        <td>0,56</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO FLEX 1 MM BRANCO 750V</th>
+                                        <td>195</td>
+                                        <td>M</td>
+                                        <td>1,6</td>
+                                    </tr>
+                                </tbody>
+                            </v-table>
+                        </div>
+                    </v-sheet>
+                </v-card>
+            </v-stepper-window-item>
+            <v-stepper-window-item :value="5">
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
+                        <div class="d-flex justify-center mt-2">
+                            <h3>
+                                Verificação de componentes elétricos
+                            </h3>
+                        </div>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>5. Chicote K4</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos e soldar cuidadosamente os terminais e
+                                cabos com estanho</span>
+                            <v-img :src="image7" height="200" @click="showOverlay(image7)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 7 – Chicote K4</i></span>
+                            <v-img :src="image8" height="200" @click="showOverlay(image8)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 8 – Esquema chicote K4</i></span>
+                        </div>
+                        <div class="px-5">
+                            <v-table density="compact" class="my-1 border">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Nome do Produto</th>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Unid</th>
+                                        <th scope="col">Quantidade</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 4 VIAS (FPH-4) DEGSON VERDE 2EDGKD-5.08-
+                                            04P-14-00Z(H)</th>
+                                        <td>9378</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL TUBO 1,0MM VERMELHO</th>
+                                        <td>9422</td>
+                                        <td>UN</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL GARFINHO 1,5MM VERMELHO</th>
+                                        <td>1083</td>
+                                        <td>UN</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO FLEX 1 MM BRANCO 750V</th>
+                                        <td>195</td>
+                                        <td>M</td>
+                                        <td>1,29</td>
+                                    </tr>
+                                </tbody>
+                            </v-table>
+                        </div>
+                    </v-sheet>
+                </v-card>
+            </v-stepper-window-item>
+            <v-stepper-window-item :value="6">
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
+                        <div class="d-flex justify-center mt-2">
+                            <h3>
+                                Verificação de componentes elétricos
+                            </h3>
+                        </div>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>6. Chicotes K5</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos e soldar cuidadosamente os terminais e
+                                cabos com estanho</span>
+                            <v-img :src="image9" height="200" @click="showOverlay(image9)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 9 – Chicotes K5</i></span>
+                            <v-img :src="image10" height="200" @click="showOverlay(image10)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 10 – Esquema chicotes K5</i></span>
+                        </div>
+                        <div class="px-5">
+                            <v-table density="compact" class="my-1 border">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Nome do Produto</th>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Unid</th>
+                                        <th scope="col">Quantidade</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 3 VIAS (FPH-3) DEGSON VERDE 2EDGKD-5.08-
+                                            03P-14-00Z(H)</th>
+                                        <td>9434</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL TUBO 1,0MM VERMELHO</th>
+                                        <td>9422</td>
+                                        <td>UN</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL GARFINHO 1,5MM VERMELHO</th>
+                                        <td>1083</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO FLEX 1 MM BRANCO 750V</th>
+                                        <td>195</td>
+                                        <td>M</td>
+                                        <td>1,59</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL GARFINHO 2,5MM AZUL</th>
+                                        <td>6482</td>
                                         <td>UN</td>
                                         <td>2</td>
                                     </tr>
@@ -324,21 +402,24 @@
             </v-stepper-window-item>
             <v-stepper-window-item :value="7">
                 <v-card border height="65vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6007_IMG"
-                            height="200" @click="showOverlay(CI6007_IMG)"></v-img>
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
                         <div class="d-flex justify-center mt-2">
                             <h3>
-                                Sensor de Vazão
+                                Verificação de componentes elétricos
                             </h3>
                         </div>
-                        <div class="mx-5 my-4">
-                            <span>Decapar 10cm do lado do conector 4 vias, desfiar a malha enrolar e colocar termo sem cola,
-                                colocar termo com cola na base da malha. Colocar tag 2cm antes da ponta dos cabos. No outro
-                                lado do cabo decapar o suficiente para colocar o conector.</span>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>7. Cabo do PC e cabo solto</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos e soldar cuidadosamente os terminais e
+                                cabos com estanho</span>
+                            <v-img :src="image11" height="200" @click="showOverlay(image11)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 11 – Cabo do PC e cabo solto</i></span>
+                            <v-img :src="image12" height="200" @click="showOverlay(image12)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 12 – Cabo do PC e cabo solto</i></span>
                         </div>
                         <div class="px-5">
-                            <v-table density="compact" class="my-1">
+                            <v-table density="compact" class="my-1 border">
                                 <tbody>
                                     <tr>
                                         <th scope="col">Nome do Produto</th>
@@ -347,22 +428,35 @@
                                         <th scope="col">Quantidade</th>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 3X18 AWG</th>
-                                        <td>755</td>
+                                        <th scope="row">TERMINAL GARFINHO 1,5MM VERMELHO</th>
+                                        <td>1083</td>
+                                        <td>UN</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO FLEX 1 MM BRANCO 750V</th>
+                                        <td>195</td>
                                         <td>M</td>
-                                        <td>2,2</td>
+                                        <td>0,20</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Conector</th>
-                                        <td>9032014</td>
+                                        <th scope="row">CABO DE MICROFONE 2X22AWG / SC-30P SANTO ANGELO</th>
+                                        <td>2098</td>
+                                        <td>M</td>
+                                        <td>0,51</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 3,81 2 VIAS (FPH-2) AMPHENOL VERDE 300V 10A
+                                            (TJ0231530000G)</th>
+                                        <td>9559</td>
                                         <td>UN</td>
                                         <td>1</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Conector 4 vias</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
+                                        <th scope="row">TERMO RETRATIL PAREDE DUPLA ADESIVADO 9,5MM</th>
+                                        <td>5828</td>
+                                        <td>M</td>
+                                        <td>0,06</td>
                                     </tr>
                                 </tbody>
                             </v-table>
@@ -371,25 +465,25 @@
                 </v-card>
             </v-stepper-window-item>
             <v-stepper-window-item :value="8">
-                <v-card border height="80vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6008_IMG"
-                            height="200" @click="showOverlay(CI6008_IMG)"></v-img>
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
                         <div class="d-flex justify-center mt-2">
                             <h3>
-                                Pressão do Óleo e Fim de Curso
+                                Verificação de componentes elétricos
                             </h3>
                         </div>
-                        <div class="mx-5 my-4">
-                            <span>Para o primeiro cabo, decapar 10cm desfiar a malha enrolar e colocar o termo, colocar as
-                                tags e o termo transparente, no outro lado decapar 8cm cortar a malha, colocar os terminais
-                                e as tags. No segundo cabo fazer o mesmo procedimento de desfiar a malha e colcoar o termo,
-                                no outro lado medir 1,05 metros do final do cabo e decapar 15cm, colocar termo com cola em
-                                ambos os lados, em seguidos cortar o cabo vermelho no meio, colocar as tags e os
-                                terminais.</span>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>8. Chicotes neutro e terra</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos e soldar cuidadosamente os terminais e
+                                cabos com estanho</span>
+                            <v-img :src="image13" height="200" @click="showOverlay(image13)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 13 – Chicotes neutro e terra</i></span>
+                            <v-img :src="image14" height="200" @click="showOverlay(image14)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 14 – Esquema neutro e terra</i></span>
                         </div>
                         <div class="px-5">
-                            <v-table density="compact" class="my-1">
+                            <v-table density="compact" class="my-1 border">
                                 <tbody>
                                     <tr>
                                         <th scope="col">Nome do Produto</th>
@@ -398,34 +492,28 @@
                                         <th scope="col">Quantidade</th>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 2X18 AWG</th>
-                                        <td></td>
+                                        <th scope="row">CABO FLEX 1 MM BRANCO 750V</th>
+                                        <td>195</td>
                                         <td>M</td>
-                                        <td>7,2</td>
+                                        <td>0,38</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Conector 6 vias</th>
-                                        <td></td>
+                                        <th scope="row">TERMINAL GARFINHO 1,5MM VERMELHO</th>
+                                        <td>1083</td>
                                         <td>UN</td>
-                                        <td>1</td>
+                                        <td>2</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Terminal olhal grande</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Terminal olhal pequeno</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Terminal garfo pequeno</th>
-                                        <td></td>
+                                        <th scope="row">TERMINAL GARFINHO 2,5MM AZUL</th>
+                                        <td>6482</td>
                                         <td>UN</td>
                                         <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO FLEX 1 MM VERDE 750V</th>
+                                        <td>197</td>
+                                        <td>M</td>
+                                        <td>0,35</td>
                                     </tr>
                                 </tbody>
                             </v-table>
@@ -434,22 +522,26 @@
                 </v-card>
             </v-stepper-window-item>
             <v-stepper-window-item :value="9">
-                <v-card border height="70vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6009_IMG"
-                            height="200" @click="showOverlay(CI6009_IMG)"></v-img>
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
                         <div class="d-flex justify-center mt-2">
                             <h3>
-                                Sensor
+                                Verificação de componentes elétricos
                             </h3>
                         </div>
-                        <div class="mx-5 my-4">
-                            <span>Para o primeiro, cortar o conector preto de acordo com o desenho ao lado e finalizar com o
-                                termo para o acabamento. No segundo, preencher com cola quente o conector branco para isolar
-                                o terminal.</span>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>9. Speakon</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos</span>
+                            <span class="px-5">✓ Primeiro fixar o sensor na carcaça para depois conectar nos
+                                DEGSON</span>
+                            <v-img :src="image15" height="200" @click="showOverlay(image15)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 15 – Speakon</i></span>
+                            <v-img :src="image16" height="200" @click="showOverlay(image16)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 16 – Esquema Speakon</i></span>
                         </div>
                         <div class="px-5">
-                            <v-table density="compact" class="my-1">
+                            <v-table density="compact" class="my-1 border">
                                 <tbody>
                                     <tr>
                                         <th scope="col">Nome do Produto</th>
@@ -458,34 +550,36 @@
                                         <th scope="col">Quantidade</th>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 2X1,5mm²</th>
-                                        <td></td>
+                                        <th scope="row">NL4MPXX - CONECTOR SPEAKON PRETO MACHO (ANTIGO
+                                            NL4MP)</th>
+                                        <td>398</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO FLEX 1 MM VERDE 750V</th>
+                                        <td>197</td>
                                         <td>M</td>
+                                        <td>0,66</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL TUBO 1,0MM VERMELHO</th>
+                                        <td>9422</td>
+                                        <td>UN</td>
+                                        <td>8</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 8 VIAS (FPH-8) DEGSON VERDE 2EDGKD-5.08-
+                                            08P-14-00Z(H)</th>
+                                        <td>9436</td>
+                                        <td>UN</td>
                                         <td>1</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 1,5mm²</th>
-                                        <td></td>
+                                        <th scope="row">TERMO RETRATIL PAREDE DUPLA ADESIVADO 9,5MM</th>
+                                        <td>5828</td>
                                         <td>M</td>
-                                        <td>2</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector 4 vias</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector</th>
-                                        <td>9032014</td>
-                                        <td>UN</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Conector Fêmea</th>
-                                        <td></td>
-                                        <td>UN</td>
-                                        <td>1</td>
+                                        <td>0,12</td>
                                     </tr>
                                 </tbody>
                             </v-table>
@@ -495,20 +589,25 @@
             </v-stepper-window-item>
             <v-stepper-window-item :value="10">
                 <v-card border height="65vh" class="d-flex justify-center pa-5">
-                    <v-sheet border elevation="4" width="35vw">
-                        <v-img :gradient="`to top right, rgba(255, 255, 255, .1), rgba(246, 147, 30, .2)`" :src="CI6010_IMG"
-                            height="200" @click="showOverlay(CI6008_IMG)"></v-img>
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
                         <div class="d-flex justify-center mt-2">
                             <h3>
-                                Bóia do Tanque
+                                Verificação de componentes elétricos
                             </h3>
                         </div>
-                        <div class="mx-5 my-4">
-                            <span>Decapar 10cm, desfiar e enrolar a malha, colocar o termo sem cola e o termo com cola na
-                                base da malha, colocar as tags e o termo transparente.</span>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>10. Tampa posterior AXD</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos</span>
+                            <span class="px-5">✓ Primeiro fixar os sensores na carcaça para depois conectar nos
+                                har-flexicon</span>
+                            <v-img :src="image17" height="200" @click="showOverlay(image17)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 17 – Sensor</i></span>
+                            <v-img :src="image18" height="200" @click="showOverlay(image18)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 18 – Esquema sensor</i></span>
                         </div>
                         <div class="px-5">
-                            <v-table density="compact" class="my-1">
+                            <v-table density="compact" class="my-1 border">
                                 <tbody>
                                     <tr>
                                         <th scope="col">Nome do Produto</th>
@@ -517,22 +616,36 @@
                                         <th scope="col">Quantidade</th>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Cabo 2X18 AWG</th>
-                                        <td></td>
+                                        <th scope="row">CONECTOR ITC 8 VIAS M24 MACHO PARA PAINEL QUADRADA
+                                            IP67 10A (SKU: CQV83-PT)</th>
+                                        <td>9252</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO BLIND MALHA TRANÇADA AFT 7X26AWG</th>
+                                        <td>9350</td>
                                         <td>M</td>
-                                        <td>3,2</td>
+                                        <td>0,40</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Conector 4 vias</th>
-                                        <td>938</td>
+                                        <th scope="row">CONECTOR 5, 08 8 VIAS (FPH-8) DEGSON VERDE 2EDGKD-5.08-
+                                            08P-14-00Z(H)</th>
+                                        <td>9436</td>
                                         <td>UN</td>
                                         <td>1</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Conector</th>
-                                        <td>9031014</td>
+                                        <th scope="row">TERMINAL TUBO SIMPLES ILHOIS 0,5MM</th>
+                                        <td>8014</td>
                                         <td>UN</td>
-                                        <td>1</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMO RETRATIL PAREDE DUPLA ADESIVADO 9,5MM</th>
+                                        <td>5828</td>
+                                        <td>M</td>
+                                        <td>0,06</td>
                                     </tr>
                                 </tbody>
                             </v-table>
@@ -540,28 +653,155 @@
                     </v-sheet>
                 </v-card>
             </v-stepper-window-item>
+            <v-stepper-window-item :value="11">
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
+                        <div class="d-flex justify-center mt-2">
+                            <h3>
+                                Verificação de componentes elétricos
+                            </h3>
+                        </div>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>11. Sensor de detonação</span>
+                            <span class="px-5">✓ Se atentar a bitola dos cabos</span>
+                            <span class="px-5">✓ Colocar os terminais nos cabos</span>
+                            <span class="px-5">✓ Primeiro fixar os sensores na carcaça para depois conectar nos
+                                DEGSON</span>
+                            <v-img :src="image19" height="200" @click="showOverlay(image19)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 19 – Esquema sensor de detonação</i></span>
+                            <v-img :src="image20" height="200" @click="showOverlay(image20)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 20 – Esquema sensor de detonação</i></span>
+                        </div>
+                        <div class="px-5">
+                            <v-table density="compact" class="my-1 border">
+                                <tbody>
+                                    <tr>
+                                        <th scope="col">Nome do Produto</th>
+                                        <th scope="col">Código</th>
+                                        <th scope="col">Unid</th>
+                                        <th scope="col">Quantidade</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR ITC 4 VIAS M16 MACHO PARA PAINEL
+                                            QUADRADA IP67 10A (SKU: CQV43PT)</th>
+                                        <td>9254</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CABO BLIND MALHA TRANÇADA AFT 2 X 18AWG</th>
+                                        <td>756</td>
+                                        <td>M</td>
+                                        <td>0,37</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CONECTOR 5, 08 8 VIAS (FPH-8) DEGSON VERDE 2EDGKD-
+                                            5.08-08P-14-00Z(H)</th>
+                                        <td>9436</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL TUBO 1,0MM VERMELHO</th>
+                                        <td>9422</td>
+                                        <td>UN</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMINAL ANEL OLHAL AMARELO 6,0MM M6 TP-6-6</th>
+                                        <td>9475</td>
+                                        <td>UN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">TERMO RETRATIL PAREDE DUPLA ADESIVADO 9,5MM</th>
+                                        <td>5828</td>
+                                        <td>M</td>
+                                        <td>0,06</td>
+                                    </tr>
+                                </tbody>
+                            </v-table>
+                        </div>
+                    </v-sheet>
+                </v-card>
+            </v-stepper-window-item>
+            <v-stepper-window-item :value="12">
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
+                        <div class="d-flex justify-center mt-2">
+                            <h3>
+                                Diagrama para montagem final
+                            </h3>
+                        </div>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>12. Para a colocação dos cabos</span>
+                            <span class="px-5">✓ Começar a montagem no K2, K3, K4 e K5</span>
+                            <span class="px-5">✓ Verificar o aperto nas entradas da fonte</span>
+                            <span class="px-5">✓ Inspecionar os cabos para possíveis rachaduras ou cortes no
+                                isolamento</span>
+                            <span class="px-5">✓ Depois de instalado os cabos revisar a instalação</span>
+                            <v-img :src="image21" height="200" @click="showOverlay(image21)"></v-img>
+                            <v-img :src="image22" height="200" @click="showOverlay(image22)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 21 – Esquema elétrico AXD</i></span>
+                        </div>
+                    </v-sheet>
+                </v-card>
+            </v-stepper-window-item>
+            <v-stepper-window-item :value="13">
+                <v-card border height="65vh" class="d-flex justify-center pa-5">
+                    <v-sheet border elevation="4" class="sheet-item overflow-auto">
+                        <div class="d-flex justify-center mt-2">
+                            <h3>
+                                Disposição dos chicotes na placa
+                            </h3>
+                        </div>
+                        <div class="d-flex flex-column mx-5 my-4">
+                            <span>13. Colocação dos rebites</span>
+                            <span class="px-5">✓ Os conectores não podem ficar tensionados</span>
+                            <span class="px-5">✓ Não fazer dobras nos cabos</span>
+                            <span class="px-5">✓ Acabamento com abraçadeiras de nylon preto</span>
+                            <v-img :src="image23" height="200" @click="showOverlay(image23)"></v-img>
+                            <span class="text-center mb-2"><i>Figura 22 – Disposição dos cabos</i></span>
+                        </div>
+                    </v-sheet>
+                </v-card>
+            </v-stepper-window-item>
         </v-stepper-window>
         <div class="group_buttons pa-4">
-            <v-btn @click="goBack()" width="10vw">Anterior</v-btn>
-            <v-btn color="orange-darken-2" width="10vw" @click="goForward()">{{ nextOrDoneText() }}</v-btn>
+            <v-btn @click="goBack()" :disabled="disableBack">Anterior</v-btn>
+            <v-btn color="orange-darken-2" @click="goForward()">{{ nextOrDoneText() }}</v-btn>
         </div>
     </v-stepper>
     <v-overlay v-model="overlay" contained class="align-center justify-center">
         <v-img :src="selectedImg" height="90vh" width="90vw" @click="overlay = false"></v-img>
     </v-overlay>
 </template>
+
 <script>
 import { defineComponent } from 'vue'
-import CI6001_IMG from '@/assets/electric/CI6001.png'
-import CI6002_IMG from '@/assets/electric/CI6002.png'
-import CI6003_IMG from '@/assets/electric/CI6003.png'
-import CI6004_IMG from '@/assets/electric/CI6004.png'
-import CI6005_IMG from '@/assets/electric/CI6005.png'
-import CI6006_IMG from '@/assets/electric/CI6006.png'
-import CI6007_IMG from '@/assets/electric/CI6007.png'
-import CI6008_IMG from '@/assets/electric/CI6008.png'
-import CI6009_IMG from '@/assets/electric/CI6009.png'
-import CI6010_IMG from '@/assets/electric/CI6010.png'
+import image1 from '@/assets/electric/image1.png'
+import image2 from '@/assets/electric/image2.png'
+import image3 from '@/assets/electric/image3.png'
+import image4 from '@/assets/electric/image4.png'
+import image5 from '@/assets/electric/image5.png'
+import image6 from '@/assets/electric/image6.png'
+import image7 from '@/assets/electric/image7.png'
+import image8 from '@/assets/electric/image8.png'
+import image9 from '@/assets/electric/image9.png'
+import image10 from '@/assets/electric/image10.png'
+import image11 from '@/assets/electric/image11.png'
+import image12 from '@/assets/electric/image12.png'
+import image13 from '@/assets/electric/image13.png'
+import image14 from '@/assets/electric/image14.png'
+import image15 from '@/assets/electric/image15.png'
+import image16 from '@/assets/electric/image16.png'
+import image17 from '@/assets/electric/image17.png'
+import image18 from '@/assets/electric/image18.png'
+import image19 from '@/assets/electric/image19.png'
+import image20 from '@/assets/electric/image20.png'
+import image21 from '@/assets/electric/image21.png'
+import image22 from '@/assets/electric/image22.png'
+import image23 from '@/assets/electric/image23.png'
 import StepElectricService from '@/services/StepElectricService'
 import dialogSector from '@/components/dialog_sector.vue'
 
@@ -569,33 +809,34 @@ export default defineComponent({
     data: () => ({
         e1: 1,
         overlay: false,
-        steps: 10,
-        stepConfig: [
-            'CI-6001',
-            'CI-6002',
-            'CI-6003',
-            'CI-6004',
-            'CI-6005',
-            'CI-6006',
-            'CI-6007',
-            'CI-6008',
-            'CI-6009',
-            'CI-6010',
-        ],
-        currentPlateId: null,
-        CI6001_IMG: CI6001_IMG,
-        CI6002_IMG: CI6002_IMG,
-        CI6003_IMG: CI6003_IMG,
-        CI6004_IMG: CI6004_IMG,
-        CI6005_IMG: CI6005_IMG,
-        CI6006_IMG: CI6006_IMG,
-        CI6007_IMG: CI6007_IMG,
-        CI6008_IMG: CI6008_IMG,
-        CI6009_IMG: CI6009_IMG,
-        CI6010_IMG: CI6010_IMG,
+        steps: 13,
+        image1: image1,
+        image2: image2,
+        image3: image3,
+        image4: image4,
+        image5: image5,
+        image6: image6,
+        image7: image7,
+        image8: image8,
+        image9: image9,
+        image10: image10,
+        image11: image11,
+        image12: image12,
+        image13: image13,
+        image14: image14,
+        image15: image15,
+        image16: image16,
+        image17: image17,
+        image18: image18,
+        image19: image19,
+        image20: image20,
+        image21: image21,
+        image22: image22,
+        image23: image23,
         selectedImg: null,
-        electrics: [],
+        electrics: null,
         dialog: false,
+        disableBack: true,
     }),
     components: {
         dialogSector
@@ -603,17 +844,17 @@ export default defineComponent({
     created() {
         this.initialize()
     },
-    computed: {
-        isMobile() {
-            if (window.innerWidth < 900) {
-                return true
+    watch: {
+        e1(newValue) {
+            if (newValue === 1) {
+                this.disableBack = true
+            } else {
+                this.disableBack = false
             }
-            return false
-        },
+        }
     },
     methods: {
         initialize() {
-            this.currentPlateId = this.$route.params.id
             this.getElectricForPlate()
             window.setTimeout(() => {
                 this.createOrUpdateStepElectric()
@@ -624,10 +865,17 @@ export default defineComponent({
                 id_placa: this.$route.params.id
             }
             let response = await StepElectricService.getAll(params)
-            this.electrics = response.data
-            if (this.electrics.ultima_etapa) {
-                this.e1 = this.electrics.ultima_etapa
+
+            if (response.data) {
+                this.electrics = response.data
+
+                if (this.electrics.ultima_etapa) {
+                    this.e1 = this.electrics.ultima_etapa
+                }
             }
+
+            this.editedIndex = 0
+            this.editedItem = Object.assign({}, response.data);
         },
         async createOrUpdateStepElectric() {
             let params = {
@@ -646,6 +894,7 @@ export default defineComponent({
                     status: 0,
                 }
                 await StepElectricService.create(params)
+                this.getElectricForPlate()
             }
         },
         nextOrDoneText() {
@@ -653,16 +902,16 @@ export default defineComponent({
         },
         goBack() {
             if (this.e1 !== 1) {
-                this.updateLastStep()
                 this.e1--
+                this.updateLastStep()
             } else {
                 this.save()
             }
         },
         goForward() {
             if (this.e1 !== this.steps) {
-                this.updateLastStep()
                 this.e1++
+                this.updateLastStep()
             } else {
                 this.save()
             }
@@ -673,9 +922,10 @@ export default defineComponent({
         },
         async updateLastStep() {
             let params = {
-                ultima_etapa: this.e1 + 1,
+                ultima_etapa: this.e1,
                 status: 1,
             }
+
             await StepElectricService.update(this.electrics.id, params)
         },
         save() {
@@ -698,10 +948,24 @@ export default defineComponent({
     },
 })
 </script>
-<style lang="scss">
+
+<style lang="scss" scoped>
 .group_buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+th,
+td {
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.sheet-item {
+    width: 100vw;
+
+    @media only screen and (min-width: 768px) {
+        width: 50vw;
+    }
 }
 </style>

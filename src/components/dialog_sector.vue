@@ -1,5 +1,5 @@
 <template>
-    <v-dialog v-model="dialog" max-width="500px">
+    <v-dialog v-model="dialog" max-width="500px" @click:outside="close">
         <v-card>
             <v-card-title>
                 <span class="text-h5">Técnicos</span>
@@ -24,6 +24,7 @@
         </v-card>
     </v-dialog>
 </template>
+
 <script>
 import TechnicianService from '@/services/TechnicianService';
 
