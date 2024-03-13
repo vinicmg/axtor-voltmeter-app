@@ -44,3 +44,9 @@ npm run test:e2e
 ```sh
 npm run lint
 ```
+
+### Após executar o build na pasta onde está localizada a dist executar o comando cmd 
+```sh
+npm install -g serve
+serve -s dist
+```
