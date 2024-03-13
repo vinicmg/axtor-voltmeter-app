@@ -1321,6 +1321,7 @@
 <script>
 import { defineComponent } from 'vue'
 import StepMechanicalService from '@/services/StepMechanicalService'
+import PlateService from '@/services/PlateService'
 import dialogSector from '@/components/dialog_sector.vue'
 import image1 from '@/assets/mechanical/image1.png'
 import image2 from '@/assets/mechanical/image2.png'
@@ -1424,9 +1425,8 @@ export default defineComponent({
             if (this.mechanicals) {
                 params = {
                     ...params,
-                    id: this.mechanicals.id
                 }
-                await StepMechanicalService.update(params)
+                await StepMechanicalService.update(this.mechanicals.id, params)
             } else {
                 params = {
                     ...params,
@@ -1463,6 +1463,14 @@ export default defineComponent({
             }
 
             await StepMechanicalService.update(this.mechanicals.id, params)
+            this.updatePlateInProgress()
+        },
+        async updatePlateInProgress() {
+            let params = {
+                status: 1,
+            }
+
+            await PlateService.update(this.$route.params.id, params)
         },
         save() {
             this.dialog = true

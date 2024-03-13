@@ -2745,6 +2745,7 @@
 
 <script>
 import StepQualityService from '@/services/StepQualityService'
+import PlateService from '@/services/PlateService'
 import dialogSector from '@/components/dialog_sector.vue'
 import { defineComponent } from 'vue';
 
@@ -3133,7 +3134,15 @@ export default defineComponent({
                 await StepQualityService.create(this.editedItem)
             }
             this.dialog = false
+            this.updatePlateInProgress()
             this.$router.go(-1)
+        },
+        async updatePlateInProgress() {
+            let params = {
+                status: 1,
+            }
+
+            await PlateService.update(this.$route.params.id, params)
         },
         closeDialog() {
             this.dialog = false

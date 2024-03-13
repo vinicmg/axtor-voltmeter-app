@@ -960,6 +960,22 @@
                                 <span>a. Resistencia = <b>385mΩ</b> na primeira leitura <b>com</b> VERIFICAR</span>
                                 <span>b. Resistencia = <b>325mΩ</b> na segunda leitura <b>sem</b> VERIFICAR</span>
                             </div>
+                            <v-table density="compact" class="border">
+                                <tbody>
+                                    <tr>
+                                        <th>Parâmetro 28</th>
+                                        <td>
+                                            <v-text-field v-model="editedItem.dados.param_28" variant="underlined"
+                                                density="compact" type="number"></v-text-field>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Parâmetro 29</th>
+                                        <td><v-text-field v-model="editedItem.dados.param_29" variant="underlined"
+                                                density="compact" type="number"></v-text-field></td>
+                                    </tr>
+                                </tbody>
+                            </v-table>
                         </div>
                     </v-sheet>
                 </v-card>
@@ -1636,6 +1652,8 @@ export default defineComponent({
                 param_31: 0,
                 param_32: 0,
                 param_33: 0,
+                param_28: 0,
+                param_29: 0,
                 duty_min: 0,
                 duty_max: 0,
                 tens_boost_linear: 0,
@@ -1665,6 +1683,8 @@ export default defineComponent({
                 param_31: 0,
                 param_32: 0,
                 param_33: 0,
+                param_28: 0,
+                param_29: 0,
                 duty_min: 0,
                 duty_max: 0,
                 tens_boost_linear: 0,
@@ -1736,9 +1756,8 @@ export default defineComponent({
             if (this.electronics) {
                 params = {
                     ...params,
-                    id: this.electronics.id
                 }
-                await StepElectronicService.update(params)
+                await StepElectronicService.update(this.electronics.id, params)
             } else {
                 params = {
                     ...params,
@@ -1773,6 +1792,14 @@ export default defineComponent({
                 status: 1,
             }
             await StepElectronicService.update(this.electronics.id, params)
+            this.updatePlateInProgress()
+        },
+        async updatePlateInProgress() {
+            let params = {
+                status: 1,
+            }
+
+            await PlateService.update(this.$route.params.id, params)
         },
         open3D() {
             this.dialog = true

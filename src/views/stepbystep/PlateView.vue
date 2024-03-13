@@ -200,7 +200,7 @@
                     </v-card-subtitle>
                     <v-card-actions>
                         <v-chip :color="getPackingColor(this.stepPacking.status)" variant="elevated"
-                            @click="dispatchPackage()" :disabled="this.stepPacking.status === 1">
+                            @click="dispatchPackage()" :disabled="this.stepPacking.status === 2">
                             {{ this.getPackingText(this.stepPacking.status) }}
                         </v-chip>
                         <v-spacer></v-spacer>
@@ -226,8 +226,8 @@
         </v-row>
 
         <div class="action_finish">
-            <v-btn width="15vw" variant="flat" color="orange-darken-4" prepend-icon="mdi-check-circle" :disabled="true"
-                @click="openFinishDialog">Finalizar</v-btn>
+            <v-btn width="15vw" variant="flat" color="orange-darken-4" prepend-icon="mdi-check-circle"
+                :disabled="enableFinishButton" @click="openFinishDialog">Finalizar</v-btn>
         </div>
 
     </div>
@@ -243,6 +243,7 @@ import StepElectricService from '@/services/StepElectricService'
 import TechnicianService from '@/services/TechnicianService'
 import StepElectronicService from '@/services/StepElectronicService'
 import StepPackingService from '@/services/StepPackingService'
+import PlateService from '@/services/PlateService'
 
 export default defineComponent({
     data: () => ({
@@ -277,6 +278,19 @@ export default defineComponent({
     },
     created() {
         this.initialize()
+    },
+    computed: {
+        enableFinishButton() {
+            if (this.stepMechanical.status === 2
+                && this.stepQuality.status === 2
+                && this.stepElectric.status === 2
+                && this.stepElectronic.status === 2
+                && this.stepPacking.status === 2) {
+                return false
+            }
+
+            return true
+        }
     },
     methods: {
         initialize() {
@@ -356,7 +370,7 @@ export default defineComponent({
             switch (status) {
                 case 0:
                     return 'green'
-                case 1:
+                case 2:
                     return 'red'
             }
         },
@@ -364,7 +378,7 @@ export default defineComponent({
             switch (status) {
                 case 0:
                     return 'Despachar'
-                case 1:
+                case 2:
                     return 'Despachado'
             }
         },
@@ -400,9 +414,6 @@ export default defineComponent({
             }
             this.dialog = false
             this.currentSectorTechnician = 0
-        },
-        openFinishDialog() {
-            alert('Finalizar')
         },
         async saveMechanical(technician) {
             const params = {
@@ -498,18 +509,29 @@ export default defineComponent({
         },
         async dispatchPackage() {
             let params = {
-                status: 1
+                status: 2
             }
 
             if (this.stepPacking.id) {
                 this.showPackingAlert = false
                 await StepPackingService.update(this.stepPacking.id, params).then(() => {
-                    this.stepPacking.status = 1
+                    this.stepPacking.status = 2
                 })
             } else {
                 this.showPackingAlert = true
             }
 
+        },
+        openFinishDialog() {
+            this.savePlate()
+        },
+        async savePlate() {
+            let params = {
+                status: 2
+            }
+
+            await PlateService.update(this.$route.params.id, params)
+            this.$router.go(-1)
         }
     }
 })

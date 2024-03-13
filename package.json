@@ -24,6 +24,7 @@
     "pinia": "^2.1.7",
     "three": "^0.159.0",
     "vue": "^3.3.4",
+    "vue-json-excel3": "^1.0.19",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {

@@ -803,6 +803,7 @@ import image21 from '@/assets/electric/image21.png'
 import image22 from '@/assets/electric/image22.png'
 import image23 from '@/assets/electric/image23.png'
 import StepElectricService from '@/services/StepElectricService'
+import PlateService from '@/services/PlateService'
 import dialogSector from '@/components/dialog_sector.vue'
 
 export default defineComponent({
@@ -885,9 +886,8 @@ export default defineComponent({
             if (this.electrics) {
                 params = {
                     ...params,
-                    id: this.electrics.id
                 }
-                await StepElectricService.update(params)
+                await StepElectricService.update(this.electrics.id, params)
             } else {
                 params = {
                     ...params,
@@ -927,6 +927,14 @@ export default defineComponent({
             }
 
             await StepElectricService.update(this.electrics.id, params)
+            this.updatePlateInProgress()
+        },
+        async updatePlateInProgress() {
+            let params = {
+                status: 1,
+            }
+
+            await PlateService.update(this.$route.params.id, params)
         },
         save() {
             this.dialog = true
