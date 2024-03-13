@@ -5,5 +5,4 @@ export default interface Plate {
     status: number,
     id_tp_placa: number,
     id_config: number,
-    id_tecnico: number
 }

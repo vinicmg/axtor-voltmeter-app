@@ -51,7 +51,27 @@ const router = createRouter({
     {
       path: '/passo-a-passo/:id',
       name: 'Passo a passo',
-      component: () => import('../views/stepbystep/PlateView.vue')
+      component: () => import('../views/stepbystep/PlateView.vue'),
+    },
+    {
+      path: '/passo-a-passo/:id/conferencia-mecanica',
+      name: 'conf-mecanica',
+      component: () => import('../views/stepbystep/MechanicalConferenceView.vue'),
+    },
+    {
+      path: '/passo-a-passo/:id/conferencia-eletronica',
+      name: 'conf-eletronica',
+      component: () => import('../views/stepbystep/ElectronicConferenceView.vue'),
+    },
+    {
+      path: '/passo-a-passo/:id/conferencia-eletrica',
+      name: 'conf-eletrica',
+      component: () => import('../views/stepbystep/ElectricConferenceView.vue'),
+    },
+    {
+      path: '/passo-a-passo/:id/conferencia-qualidade',
+      name: 'conf-qualidade',
+      component: () => import('../views/stepbystep/QualityConferenceView.vue')
     }
   ]
 })
