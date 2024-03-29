@@ -5,15 +5,15 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: { path: '/placas' }
+      redirect: { path: '/equipamentos' }
     },
     {
-      path: '/placas',
-      name: 'Placas',
+      path: '/equipamentos',
+      name: 'Equipamentos',
       component: () => import('../views/PlateView.vue'),
       children: [
         {
-          path: '/placas/:status',
+          path: '/equipamentos/:status',
           component: () => import('../views/PlateView.vue')
         }
       ]
@@ -34,8 +34,8 @@ const router = createRouter({
       component: () => import('../views/register/TypePlateView.vue')
     },
     {
-      path: '/cadastro/placas',
-      name: 'Cadastro de Placas',
+      path: '/cadastro/equipamentos',
+      name: 'Cadastro de Equipamentos',
       component: () => import('../views/register/PlateView.vue')
     },
     {
