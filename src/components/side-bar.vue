@@ -32,7 +32,7 @@
 <script setup>
 import { useSideBarStore } from '@/stores/sidebar';
 import { storeToRefs } from 'pinia';
-import colors from '../assets/colors'
+import colors from '../assets/globalColors'
 import logoSolo from '../assets/logo_axtor_solo.jpg'
 
 const sidebarStore = useSideBarStore();

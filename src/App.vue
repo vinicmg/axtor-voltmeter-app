@@ -21,7 +21,7 @@ import { RouterView } from 'vue-router'
 import { useSideBarStore } from './stores/sidebar';
 import sideBar from './components/side-bar.vue';
 import { storeToRefs } from 'pinia';
-import colors from './assets/colors'
+import colors from './assets/globalColors'
 
 const sidebarStore = useSideBarStore();
 
