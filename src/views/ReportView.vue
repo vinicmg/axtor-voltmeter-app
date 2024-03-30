@@ -275,7 +275,7 @@ export default defineComponent({
     statusValue: null,
     status: [
       {
-        title: 'Não iniciada',
+        title: 'Não iniciado',
         value: 0,
       },
       {
@@ -283,7 +283,7 @@ export default defineComponent({
         value: 1,
       },
       {
-        title: 'Finalizada',
+        title: 'Finalizado',
         value: 2,
       }
     ],
@@ -322,9 +322,9 @@ export default defineComponent({
         case 1:
           return 'Em andamento'
         case 2:
-          return 'Finalizada'
+          return 'Finalizado'
         default:
-          return 'Não iniciada'
+          return 'Não iniciado'
       }
     },
     getStatusColor(status) {

@@ -9,7 +9,7 @@
                 </template>
 
                 <v-list-item to="/equipamentos">Geral</v-list-item>
-                <v-list-item to="/equipamentos/0">Não iniciadas</v-list-item>
+                <v-list-item to="/equipamentos/0">Não iniciados</v-list-item>
                 <v-list-item to="/equipamentos/1">Em andamento</v-list-item>
                 <v-list-item to="/equipamentos/2">Finalizadas</v-list-item>
             </v-list-group>

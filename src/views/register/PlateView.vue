@@ -269,9 +269,9 @@ export default defineComponent({
         case 1:
           return 'Em andamento'
         case 2:
-          return 'Finalizada'
+          return 'Finalizado'
         default:
-          return 'Não iniciada'
+          return 'Não iniciado'
       }
     },
     getStatusColor(status) {
