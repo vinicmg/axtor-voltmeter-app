@@ -51,7 +51,7 @@ export default {
         statusValue: null,
         status: [
             {
-                title: 'Não iniciada',
+                title: 'Não iniciado',
                 value: 0,
             },
             {
@@ -59,7 +59,7 @@ export default {
                 value: 1,
             },
             {
-                title: 'Finalizada',
+                title: 'Finalizado',
                 value: 2,
             }
         ],
