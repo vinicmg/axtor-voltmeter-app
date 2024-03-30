@@ -260,11 +260,11 @@
                   <v-container class="border border-dark mb-4">
                     <v-row>
                       <v-col cols="12" sm="6" md="6">
-                        <v-text-field v-model="editedItem.capacitancia_min" label="Min" variant="outlined" suffix="mF"
+                        <v-text-field v-model="editedItem.capacitancia_min" label="Min" variant="outlined" suffix="uH"
                           type="number"></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6" md="6">
-                        <v-text-field v-model="editedItem.capacitancia_max" label="Max" variant="outlined" suffix="mF"
+                        <v-text-field v-model="editedItem.capacitancia_max" label="Max" variant="outlined" suffix="uH"
                           type="number"></v-text-field>
                       </v-col>
                     </v-row>
