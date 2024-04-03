@@ -301,10 +301,10 @@ export default defineComponent({
       let returnedFields = []
 
       this.fields.forEach(val => {
-        let x = {
-          [`"${val.fieldValue}"`]: val.fieldName
+        returnedFields = {
+          ...returnedFields,
+          [val.fieldValue]: val.fieldName
         }
-        returnedFields.push(x)
       })
 
       return returnedFields
@@ -377,23 +377,13 @@ export default defineComponent({
 
         let values = Object.entries(firstData)
 
-        let returnedFields = []
-
-        this.fields.forEach(val => {
-          let x = {
-            [val.fieldValue]: val.fieldName
-          }
-          returnedFields.push(x)
-        })
-
-        let keys = Object.entries(returnedFields)
-        console.log(keys)
-        keys.forEach((titleValue, index) => {
-          //console.log(titleValue[1])
-          if (values[index][0] === titleValue[1]) {
+        let keys = Object.entries(this.fields)
+        keys.forEach((val, index) => {
+          if (values[index][0] === val[1].fieldName) {
             let x = {
-              title: titleValue[0],
-              value: values[index][1]
+              title: val[1].fieldValue,
+              value: values[index][1],
+              suffix: val[1].fieldSuffix
             }
             result.push(x)
           }
