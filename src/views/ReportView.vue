@@ -86,7 +86,7 @@ export default defineComponent({
     fields: [
       { fieldValue: "Pós Gravação 5v", fieldName: "posgrav_5", fieldSuffix: 'mA' },
       { fieldValue: "Pós Gravação 12v", fieldName: "posgrav_12", fieldSuffix: "mA" },
-      { fieldValue: "Pós Gravação -12v ", fieldName: "posgrav_neg12", fieldSuffix: "mA" },
+      { fieldValue: "Pós Gravação -12v", fieldName: "posgrav_neg12", fieldSuffix: "mA" },
       { fieldValue: "RV10", fieldName: "trim_rv10", fieldSuffix: "kΩ" },
       { fieldValue: "Tensão Nominal 5v - J8/1", fieldName: "j8_1", fieldSuffix: "V" },
       { fieldValue: "Tensão Nominal 12v - J8/3", fieldName: "j8_3", fieldSuffix: "V" },
@@ -302,7 +302,7 @@ export default defineComponent({
 
       this.fields.forEach(val => {
         let x = {
-          [val.fieldValue]: val.fieldName
+          [`"${val.fieldValue}"`]: val.fieldName
         }
         returnedFields.push(x)
       })
@@ -376,9 +376,20 @@ export default defineComponent({
         Object.assign(firstData, secondData)
 
         let values = Object.entries(firstData)
-        let keys = Object.entries(this.fields)
 
+        let returnedFields = []
+
+        this.fields.forEach(val => {
+          let x = {
+            [val.fieldValue]: val.fieldName
+          }
+          returnedFields.push(x)
+        })
+
+        let keys = Object.entries(returnedFields)
+        console.log(keys)
         keys.forEach((titleValue, index) => {
+          //console.log(titleValue[1])
           if (values[index][0] === titleValue[1]) {
             let x = {
               title: titleValue[0],
