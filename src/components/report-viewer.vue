@@ -14,7 +14,7 @@
                                 <th scope="col">Valor</th>
                             </tr>
                             <tr v-for="(item, index) in items" :key="index">
-                                <th>{{ item.title }}</th>
+                                <th>{{ item.title + (item.suffix ? ` - (${item.suffix})` : '') }}</th>
                                 <td>{{ item.value }}</td>
                             </tr>
                         </tbody>
